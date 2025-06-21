@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify
 from utils.auth_utils import token_required
 import sqlite3
-from controllers.utils.db_utils import get_db_path
+from utils.db_utils import get_db_path
 
 bp = Blueprint("facturas", __name__, url_prefix="/api/v1/count")
 

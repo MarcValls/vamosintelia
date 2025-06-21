@@ -8,7 +8,8 @@ import hashlib
 
 bp = Blueprint("auth", __name__, url_prefix="/api/v1/auth")
 DB_PATH = get_db_path()
-SECRET_KEY = os.environ.get("INTELIA_SECRET_KEY", "INTELIA_SUPER_SECRETO")
+# Fail fast if the environment variable is missing
+SECRET_KEY = os.environ["INTELIA_SECRET_KEY"]
 
 @bp.route("/login", methods=["POST"])
 def login():

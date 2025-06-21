@@ -95,6 +95,7 @@ el objeto `report.json`.
 Con este set de roles y el prompt maestro tu agente de testing podrá comportarse como usuarios reales, descubrir errores incapaces de detectarse con pruebas puramente unitarias y entregar un informe listo para el equipo de desarrollo. ¡Listo para implementar!
 ```
 
+codex/update-api-base-url-configuration
 ## Configurar `api_base`
 
 Las páginas HTML y scripts buscan la URL base de la API en `localStorage` bajo la clave `api_base`. Si no existe, se asume el mismo origen de la página.
@@ -111,3 +112,8 @@ Las páginas HTML y scripts buscan la URL base de la API en `localStorage` bajo 
    ```javascript
    localStorage.removeItem('api_base');
    ```
+
+## Environment variables
+
+Set `INTELIA_SECRET_KEY` before running the application. This secret key is mandatory and used for signing authentication tokens.
+main
