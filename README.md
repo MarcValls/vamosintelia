@@ -83,7 +83,13 @@ el objeto `report.json`.
 1. **Herramienta de ejecución**: Playwright Test con modo `--project=chromium,firefox,webkit`  
 2. **Hook**: `npx playwright test --config=qa.config.ts --grep @human-test`  
 3. **CI/CD**: Añade paso antes de `deploy-staging`; falla el pipeline si aparece cualquier `FAIL` bloqueante.  
-4. **Artefactos**: Carga `report.json` + carpeta `screenshots/` como artefactos de la build.  
+4. **Artefactos**: Carga `report.json` + carpeta `screenshots/` como artefactos de la build.
+
+5. **Prueba local rápida**:
+
+   ```bash
+   npx playwright test --config=qa.config.ts --grep @human-test
+   ```
 
 ---
 
