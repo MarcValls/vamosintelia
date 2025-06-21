@@ -3,7 +3,8 @@ import jwt
 import os
 from functools import wraps
 
-SECRET_KEY = os.environ.get("INTELIA_SECRET_KEY", "INTELIA_SUPER_SECRETO")
+# Fail fast if the environment variable is missing
+SECRET_KEY = os.environ["INTELIA_SECRET_KEY"]
 
 def token_required(f):
     @wraps(f)

@@ -94,3 +94,7 @@ el objeto `report.json`.
 
 Con este set de roles y el prompt maestro tu agente de testing podrá comportarse como usuarios reales, descubrir errores incapaces de detectarse con pruebas puramente unitarias y entregar un informe listo para el equipo de desarrollo. ¡Listo para implementar!
 ```
+
+## Environment variables
+
+Set `INTELIA_SECRET_KEY` before running the application. This secret key is mandatory and used for signing authentication tokens.
