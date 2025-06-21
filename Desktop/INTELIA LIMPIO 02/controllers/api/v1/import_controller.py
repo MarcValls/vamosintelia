@@ -1,8 +1,9 @@
 
+from flask import Blueprint, request, jsonify, current_app
+from models import db
 from models.cliente import Cliente
 
 import_bp = Blueprint('import_bp', __name__, url_prefix='/api/v1/import')
-from flask import Blueprint
 
 @import_bp.route('/clientes', methods=['POST'])
 def import_clientes():
