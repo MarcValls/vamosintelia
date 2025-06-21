@@ -1,0 +1,114 @@
+[
+  {
+    "id": "cita-1-20250603-0900",
+    "start": "2025-06-03T09:00:00",
+    "end": "2025-06-03T10:00:00",
+    "cliente_num": 1,
+    "vehiculo_idx": 0,
+    "servicio": "Recepción de coche",
+    "matricula": "1234ABC",
+    "estado": "sin-recepcion",
+    "historial": [
+      "Cita creada: 2025-06-03 09:00"
+    ]
+  },
+  {
+    "id": "cita-2-20250603-1030",
+    "start": "2025-06-03T10:30:00",
+    "end": "2025-06-03T11:30:00",
+    "cliente_num": 2,
+    "vehiculo_idx": 0,
+    "servicio": "ITV",
+    "matricula": "5678DEF",
+    "estado": "recepcionada",
+    "historial": [
+      "Cita creada: 2025-06-03 10:30",
+      "Recepción completada: 2025-06-03 10:45"
+    ]
+  },
+  {
+    "id": "cita-3-20250603-1200",
+    "start": "2025-06-03T12:00:00",
+    "end": "2025-06-03T13:00:00",
+    "cliente_num": 3,
+    "vehiculo_idx": 1,
+    "servicio": "Diagnóstico motor",
+    "matricula": "2222BBB",
+    "estado": "diagnosticada",
+    "historial": [
+      "Cita creada: 2025-06-03 12:00",
+      "Recepción completada: 2025-06-03 12:10",
+      "Diagnóstico completado: 2025-06-03 12:45"
+    ]
+  },
+  {
+    "id": "cita-4-20250603-1600",
+    "start": "2025-06-03T16:00:00",
+    "end": "2025-06-03T17:00:00",
+    "cliente_num": 4,
+    "vehiculo_idx": 0,
+    "servicio": "Presupuesto oficial",
+    "matricula": "3333CCC",
+    "estado": "presupuestada",
+    "historial": [
+      "Cita creada: 2025-06-03 16:00",
+      "Recepción completada: 2025-06-03 16:05",
+      "Diagnóstico completado: 2025-06-03 16:20",
+      "Presupuesto aceptado: 2025-06-03 16:50"
+    ]
+  },
+  {
+    "id": "cita-5-20250603-1730",
+    "start": "2025-06-03T17:30:00",
+    "end": "2025-06-03T18:30:00",
+    "cliente_num": 5,
+    "vehiculo_idx": 0,
+    "servicio": "Revisión",
+    "matricula": "4444DDD",
+    "estado": "programada",
+    "historial": [
+      "Cita creada: 2025-06-03 17:30",
+      "Recepción completada: 2025-06-03 17:35",
+      "Diagnóstico completado: 2025-06-03 17:50",
+      "Presupuesto aceptado: 2025-06-03 18:00",
+      "Trabajo programado: 2025-06-03 18:10"
+    ]
+  },
+  {
+    "id": "cita-6-20250604-1000",
+    "start": "2025-06-04T10:00:00",
+    "end": "2025-06-04T11:00:00",
+    "cliente_num": 6,
+    "vehiculo_idx": 0,
+    "servicio": "Embrague",
+    "matricula": "5555EEE",
+    "estado": "ejecucion",
+    "historial": [
+      "Cita creada: 2025-06-04 10:00",
+      "Recepción completada: 2025-06-04 10:10",
+      "Diagnóstico completado: 2025-06-04 10:30",
+      "Presupuesto aceptado: 2025-06-04 10:40",
+      "Trabajo programado: 2025-06-04 10:45",
+      "Trabajo en ejecución: 2025-06-04 10:50"
+    ]
+  },
+  {
+    "id": "cita-7-20250605-0930",
+    "start": "2025-06-05T09:30:00",
+    "end": "2025-06-05T10:30:00",
+    "cliente_num": 7,
+    "vehiculo_idx": 0,
+    "servicio": "Pastillas de freno",
+    "matricula": "6666FFF",
+    "estado": "finalizado",
+    "historial": [
+      "Cita creada: 2025-06-05 09:30",
+      "Recepción completada: 2025-06-05 09:35",
+      "Diagnóstico completado: 2025-06-05 09:40",
+      "Presupuesto aceptado: 2025-06-05 09:50",
+      "Trabajo programado: 2025-06-05 09:55",
+      "Trabajo en ejecución: 2025-06-05 10:00",
+      "Trabajo finalizado: 2025-06-05 10:30"
+    ]
+  }
+]

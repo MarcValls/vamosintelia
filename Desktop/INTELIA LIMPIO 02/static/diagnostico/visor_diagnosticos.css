@@ -1,0 +1,116 @@
+/* Fondo principal claro, letras siempre oscuras */
+.container-visor {
+    margin-top: 40px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(33,59,116,0.10);
+    padding: 32px 20px 20px 20px;
+    color: #1a2235; /* Color de texto principal */
+}
+
+/* Encabezado de tabla y paginación */
+.table th {
+    background: #213b74;
+    color: #fff !important; /* Letras blancas sobre fondo azul oscuro */
+    font-weight: 600;
+    font-size: 1rem;
+}
+.table td {
+    background: #fff;
+    color: #213b74; /* Letras azul oscuro sobre fondo claro */
+    font-size: 1rem;
+}
+.table tr:nth-child(even) td {
+    background: #f4f6fb;
+}
+
+/* Botón de nuevo diagnóstico */
+#btnNuevoDiagnostico {
+    min-width: 190px;
+    font-weight: bold;
+    font-size: 1.05rem;
+    background: #29b26f !important;
+    color: #fff !important;
+    border: none;
+}
+#btnNuevoDiagnostico:hover {
+    background: #20a360 !important;
+    color: #fff !important;
+}
+
+/* Paginación */
+.pagination .page-link {
+    color: #213b74;
+    background: #fff;
+    border: 1px solid #c7d3ee;
+}
+.pagination .page-item.active .page-link {
+    background-color: #213b74;
+    color: #fff !important;
+    border-color: #213b74;
+}
+.pagination .page-link:focus {
+    background: #dbe4fa;
+    color: #213b74;
+}
+
+/* Filtros y formularios */
+#filtrosForm .form-control,
+#filtrosForm .form-select {
+    min-width: 120px;
+    font-size: 1rem;
+    background: #f8fafd;
+    color: #213b74;
+    border: 1px solid #c7d3ee;
+}
+#filtrosForm .form-control:focus,
+#filtrosForm .form-select:focus {
+    border-color: #213b74;
+    box-shadow: 0 0 0 2px #c7d3ee77;
+}
+
+.form-label {
+    color: #213b74;
+    font-weight: 500;
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 16px;
+    background: #fff;
+    color: #1a2235;
+}
+.modal-header {
+    background: #213b74;
+    border-bottom: 1px solid #c7d3ee;
+}
+.modal-title {
+    color: #fff;
+    font-weight: bold;
+}
+#formDiagnosticoModal .form-label {
+    color: #213b74;
+    font-weight: 500;
+}
+#formDiagnosticoModal .form-control, 
+#formDiagnosticoModal textarea {
+    border-radius: 8px;
+    background: #f8fafd;
+    color: #213b74;
+}
+#formDiagnosticoModal .form-control[readonly], 
+#formDiagnosticoModal textarea[readonly] {
+    background: #e8edf6;
+    color: #213b74;
+}
+#finalizarDiagnosticoBtnModal {
+    font-size: 1.15rem;
+    padding: 8px 32px;
+    background: #213b74;
+    color: #fff !important;
+    border: none;
+}
+#finalizarDiagnosticoBtnModal:hover {
+    background: #162252;
+    color: #fff !important;
+}

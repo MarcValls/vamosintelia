@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestión de Stock - Intelia Manager</title>
+  <link rel="stylesheet" href="visor_stock.css" />
+</head>
+<body>
+  <header class="cabecera">
+    <h1>📦 Gestión de Almacén</h1>
+    <button id="btn-recargar">🔄 Recargar</button>
+    <button id="btn-nuevo">➕ Nuevo producto</button>
+  </header>
+
+  <main>
+    <table id="tabla-stock">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aquí se inyectarán los productos -->
+      </tbody>
+    </table>
+  </main>
+
+  <div id="contenedor-modal"></div>
+  <script>
+    fetch("modal_stock.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("contenedor-modal").innerHTML = html;
+      });
+  </script>
+  <script src="visor_stock.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- static/agenda/visor_agenda.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda de Citas – Intelia Manager</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/main.min.css">
+    <link rel="stylesheet" href="visor_agenda.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/main.min.js"></script>
+    <script src="visor_agenda.js" defer></script>
+</head>
+<body>
+    <div class="container-visor">
+        <h1 class="visor-title">Agenda de Citas</h1>
+        <button id="btnNuevaCita" class="btn-success">+ Nueva cita</button>
+        <div id="calendar"></div>
+        <!-- Modal de alta/edición -->
+        <div id="modalCita" class="modal" style="display:none;">
+            <div class="modal-content">
+                <h2 id="modal-title">Nueva cita</h2>
+                <form id="formCita" autocomplete="off">
+                    <input type="hidden" name="id" id="citaId">
+                    <label>Fecha</label>
+                    <input type="date" name="fecha" id="fechaCita" required>
+                    <label>Hora</label>
+                    <input type="time" name="hora" id="horaCita" required>
+                    <label>Cliente</label>
+                    <input type="text" name="cliente" id="clienteAutocomplete" placeholder="Buscar cliente..." required>
+                    <input type="hidden" name="cliente_id" id="clienteId">
+                    <div id="autocomplete-list" class="autocomplete-items"></div>
+                    <label>Descripción</label>
+                    <textarea name="descripcion" id="descripcionCita" placeholder="Descripción..."></textarea>
+                    <div class="modal-actions">
+                        <button type="submit" class="btn-success">Guardar</button>
+                        <button type="button" class="btn-cancel" onclick="cerrarModal()">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

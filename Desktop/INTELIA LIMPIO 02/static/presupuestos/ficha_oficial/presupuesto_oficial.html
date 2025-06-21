@@ -1,0 +1,66 @@
+<!-- presupuesto_oficial.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Presupuesto Oficial – Talleres BOTELLA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f6f7fb; }
+    .presupuesto-box { background: #fff; max-width: 550px; margin: 40px auto; border-radius: 14px; box-shadow: 0 4px 16px #0001; padding: 34px 42px; }
+    .presupuesto-titulo { color: #2471ec; font-size: 1.35em; font-weight: bold; text-align: center; margin-bottom: 24px; }
+    .acciones { text-align: center; margin-top: 24px; }
+    .btn-confirmar { background: #2ecc40; color: #fff; border: none; font-size: 1.1em; margin-right: 10px; }
+    .btn-confirmar:hover { background: #26ab36; }
+    .btn-rechazar { background: #e74c3c; color: #fff; border: none; font-size: 1.1em; }
+    .btn-rechazar:hover { background: #c0392b; }
+    .presupuesto-msg { font-style: italic; color: #222; margin: 12px 0 0 0; }
+    .presupuesto-footer { text-align: center; color: #444; margin-top: 26px; }
+    @media (max-width: 700px) {
+      .presupuesto-box { padding: 10px; }
+      .presupuesto-titulo { font-size: 1em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="presupuesto-box">
+    <div class="presupuesto-titulo">Presupuesto Oficial - Talleres BOTELLA</div>
+    <div><b>Referencia:</b> <span id="presu-referencia"></span></div>
+    <div><b>Cliente:</b> <span id="presu-cliente"></span></div>
+    <div><b>Vehículo:</b> <span id="presu-vehiculo"></span></div>
+    <div><b>Matrícula:</b> <span id="presu-matricula"></span></div>
+    <div><b>Fecha:</b> <span id="presu-fecha"></span></div>
+    <div><b>Hora:</b> <span id="presu-hora"></span></div>
+    <hr>
+    <b>Detalle del presupuesto</b>
+    <table class="table table-bordered table-sm my-3">
+      <thead class="table-light">
+        <tr>
+          <th>Concepto</th>
+          <th>Cantidad</th>
+          <th>Precio Unitario</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody id="presu-tbody">
+        <!-- Se inyectarán filas desde JS -->
+      </tbody>
+    </table>
+    <div style="font-weight:bold; text-align:right; font-size:1.07em;">
+      Total estimado: EUR <span id="presu-total"></span> (incluye IVA <span id="presu-iva"></span>%)
+    </div>
+    <div class="presupuesto-msg">
+      Este presupuesto incluye diagnóstico y materiales imprescindibles. Válido por 7 días.
+    </div>
+    <div class="acciones">
+      <a id="presu-btn-aceptar" class="btn btn-confirmar btn-lg" href="#" target="_blank">Aceptar presupuesto</a>
+      <a id="presu-btn-rechazar" class="btn btn-rechazar btn-lg" href="#" target="_blank">Rechazar presupuesto</a>
+    </div>
+    <div class="presupuesto-footer">
+      Gracias por confiar en Talleres BOTELLA
+    </div>
+  </div>
+
+  <script src="presupuesto_oficial.js"></script>
+</body>
+</html>

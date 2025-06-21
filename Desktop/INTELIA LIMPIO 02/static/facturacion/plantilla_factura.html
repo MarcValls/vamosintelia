@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Facturación - Intelia Manager</title>
+
+  <!-- Tu CSS principal -->
+  <link rel="stylesheet" href="../assets/intelia_manager.css">
+
+  <!-- Bootstrap CSS (si quieres mantener estilos de validación) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- Botón menú hamburguesa para móvil -->
+  <main class="container container-facturacion">
+  
+
+    <!-- Listado de facturas guardadas (opcional) 
+    <section class="mb-5">
+      <h2 style="color: var(--azul-intelia);">Facturas Guardadas</h2>
+      <div id="facturas-list" class="mb-4">
+        <p class="texto-secundario">No hay facturas guardadas todavía.</p>
+      </div>
+      <hr style="border-color: var(--gris-medio); margin-bottom: 28px;">
+    </section>-->
+
+    <!-- Formulario para crear nueva factura -->
+    <section class="mb-5">
+      <h2 style="color: var(--azul-intelia); margin-bottom: 22px; text-align: center;">Nueva Factura</h2>
+      <form id="formFactura" class="row g-3 needs-validation" novalidate autocomplete="off">
+        <!-- Datos del Cliente -->
+        <div class="col-md-6">
+          <label for="clienteNombre" class="form-label">Cliente (Razón Social)</label>
+          <input type="text" id="clienteNombre" name="clienteNombre" class="form-control" placeholder="Nombre o Razón Social" required>
+          <div class="invalid-feedback">Introduce el nombre o razón social del cliente.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="clienteNIF" class="form-label">NIF / CIF</label>
+          <input type="text" id="clienteNIF" name="clienteNIF" class="form-control" placeholder="NIF/CIF" required>
+          <div class="invalid-feedback">Introduce el NIF/CIF del cliente.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="clienteDomicilio" class="form-label">Domicilio Fiscal</label>
+          <input type="text" id="clienteDomicilio" name="clienteDomicilio" class="form-control" placeholder="Domicilio Fiscal" required>
+          <div class="invalid-feedback">Introduce el domicilio fiscal del cliente.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="clienteEmail" class="form-label">Email (opcional)</label>
+          <input type="email" id="clienteEmail" name="clienteEmail" class="form-control" placeholder="email@cliente.com">
+        </div>
+
+        <!-- Datos de la Factura -->
+        <div class="col-md-4">
+          <label for="facturaNumero" class="form-label">Número de Factura</label>
+          <input type="text" id="facturaNumero" name="facturaNumero" class="form-control" placeholder="0001" required>
+          <div class="invalid-feedback">Debe indicar un número de factura único.</div>
+        </div>
+        <div class="col-md-4">
+          <label for="facturaFechaEmision" class="form-label">Fecha de Emisión</label>
+          <input type="date" id="facturaFechaEmision" name="facturaFechaEmision" class="form-control" required>
+          <div class="invalid-feedback">Introduce la fecha de emisión.</div>
+        </div>
+        <div class="col-md-4">
+          <label for="facturaFechaOperacion" class="form-label">Fecha de Operación</label>
+          <input type="date" id="facturaFechaOperacion" name="facturaFechaOperacion" class="form-control">
+        </div>
+
+        <!-- Líneas de Factura -->
+        <div class="col-12">
+          <h3 style="color: var(--azul-intelia); margin-top: 32px; margin-bottom: 18px;">Líneas de Factura</h3>
+          <div class="table-responsive">
+            <table class="clientes-table" id="tablaLineas">
+              <thead>
+                <tr>
+                  <th>Descripción</th>
+                  <th>Cantidad</th>
+                  <th>Precio Unitario (€)</th>
+                  <th>Tipo IVA (%)</th>
+                  <th>Importe (€)</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Filas dinámicas aquí -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4" class="text-end"><strong>Base Imponible (€):</strong></td>
+                  <td id="baseImponible">0.00</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td colspan="4" class="text-end"><strong>IVA (€):</strong></td>
+                  <td id="ivaTotal">0.00</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td colspan="4" class="text-end"><strong>Total (€):</strong></td>
+                  <td id="totalFactura">0.00</td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <button id="btnAgregarLinea" type="button" class="btn-primary">Agregar Línea</button>
+        </div>
+
+        <!-- Forma de Pago y Condiciones -->
+        <div class="col-md-6">
+          <label for="formaPago" class="form-label">Forma de Pago</label>
+          <select id="formaPago" name="formaPago" class="form-select" required>
+            <option value="">Selecciona...</option>
+            <option value="transferencia">Transferencia Bancaria</option>
+            <option value="cheque">Cheque</option>
+            <option value="efectivo">Efectivo</option>
+          </select>
+          <div class="invalid-feedback">Selecciona la forma de pago.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="plazoPago" class="form-label">Plazo de Pago</label>
+          <input type="text" id="plazoPago" name="plazoPago" class="form-control" placeholder="e.g. 30 días">
+        </div>
+
+        <!-- Botón Generar Factura -->
+        <div class="col-12 text-end">
+          <button id="btnGenerarFactura" type="button" class="btn-primary">Generar Factura</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Vista Previa de la Factura Generada -->
+    <section id="vistaPrevia" style="display: none; margin-top: 40px;">
+      <h2 style="color: var(--azul-intelia); margin-bottom: 20px;">Vista Previa de Factura</h2>
+      <div id="contenidoFactura" class="ficha-box"></div>
+    </section>
+  </main>
+
+  <!-- Tu utils.js (si lo necesitas para cargar datos de cliente) -->
+  <script src="../clientes/utils.js"></script>
+
+  <!-- Script de facturación dinámico -->
+  <script src="facturacion.js"></script>
+
+  <!-- Bootstrap JS (para validaciones y estilos) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>

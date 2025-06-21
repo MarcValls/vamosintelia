@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestor de Incidencias</title>
+  <link rel="stylesheet" href="/static/incidencias/incidencias.css">
+</head>
+<body>
+  <h1>Gestor de Incidencias</h1>
+
+  <div class="filtros">
+    <label for="filtroEstado">Filtrar por estado:</label>
+    <select id="filtroEstado">
+      <option value="todos">Todos</option>
+      <option value="pendiente">Pendiente</option>
+      <option value="resuelto">Resuelto</option>
+    </select>
+  </div>
+
+  <div id="contenedorIncidencias" class="grid-incidencias"></div>
+</body>
+</html>

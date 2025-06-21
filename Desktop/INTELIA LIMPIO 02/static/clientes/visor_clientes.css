@@ -1,0 +1,152 @@
+/* visor_clientes.css */
+
+body {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #fff;
+  color: #1a2235;
+  margin: 0;
+  padding: 40px;
+}
+
+.container-visor {
+  background: #fff;
+  color: #1a2235;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(33,59,116,0.10);
+  padding: 32px 20px;
+}
+
+.visor-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.table th {
+  background: #213b74;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.table td {
+  background: #fff;
+  color: #213b74;
+  padding: 10px;
+}
+
+.table tr:nth-child(even) td {
+  background: #f4f6fb;
+}
+
+.form-control {
+  background: #f8fafd;
+  color: #213b74;
+  border: 1px solid #c7d3ee;
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #213b74;
+  box-shadow: 0 0 0 2px #c7d3ee77;
+}
+
+.btn-success {
+  background: #29b26f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background: #20a360;
+}
+
+.btn-action, .btn-cancel {
+  background: #213b74;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.btn-cancel:hover {
+  background: #162252;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(33,59,116,0.2);
+  z-index: 1000;
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #213b74;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  color: #213b74;
+  cursor: pointer;
+}
+
+.mini-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+ul#historialCliente {
+  padding-left: 20px;
+  margin: 10px 0;
+  color: #213b74;
+}

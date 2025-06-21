@@ -1,0 +1,221 @@
+openapi: 3.0.0
+info:
+  title: INTELIA API
+  version: 1.0.0
+paths:
+  /api/agendas:
+    get:
+      summary: get_all en /api/agendas
+      responses:
+        '200':
+          description: "\xC9xito"
+    post:
+      summary: create en /api/agendas
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/agendas/<int:item_id>:
+    put:
+      summary: update en /api/agendas/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+    delete:
+      summary: delete en /api/agendas/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/login:
+    post:
+      summary: login en /api/login
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/clientes:
+    get:
+      summary: get_all en /api/clientes
+      responses:
+        '200':
+          description: "\xC9xito"
+    post:
+      summary: create en /api/clientes
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/clientes/<int:item_id>:
+    put:
+      summary: update en /api/clientes/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+    delete:
+      summary: delete en /api/clientes/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/diagnosticos:
+    get:
+      summary: get_all en /api/diagnosticos
+      responses:
+        '200':
+          description: "\xC9xito"
+    post:
+      summary: create en /api/diagnosticos
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/diagnosticos/<int:item_id>:
+    put:
+      summary: update en /api/diagnosticos/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+    delete:
+      summary: delete en /api/diagnosticos/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/facturas:
+    get:
+      summary: get_all en /api/facturas
+      responses:
+        '200':
+          description: "\xC9xito"
+    post:
+      summary: create en /api/facturas
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/facturas/<int:item_id>:
+    put:
+      summary: update en /api/facturas/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+    delete:
+      summary: delete en /api/facturas/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/trabajos:
+    get:
+      summary: get_all en /api/trabajos
+      responses:
+        '200':
+          description: "\xC9xito"
+    post:
+      summary: create en /api/trabajos
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/trabajos/<int:item_id>:
+    put:
+      summary: update en /api/trabajos/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+    delete:
+      summary: delete en /api/trabajos/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/presupuestos:
+    get:
+      summary: get_all en /api/presupuestos
+      responses:
+        '200':
+          description: "\xC9xito"
+    post:
+      summary: create en /api/presupuestos
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/presupuestos/<int:item_id>:
+    put:
+      summary: update en /api/presupuestos/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+    delete:
+      summary: delete en /api/presupuestos/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/stock:
+    get:
+      summary: get_all en /api/stock
+      responses:
+        '200':
+          description: "\xC9xito"
+    post:
+      summary: create en /api/stock
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/stock/<int:item_id>:
+    put:
+      summary: update en /api/stock/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+    delete:
+      summary: delete en /api/stock/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/usuarios:
+    get:
+      summary: '@token_required en /api/usuarios'
+      responses:
+        '200':
+          description: "\xC9xito"
+    post:
+      summary: '@token_required en /api/usuarios'
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/usuarios/<int:item_id>:
+    delete:
+      summary: '@token_required en /api/usuarios/<int:item_id>'
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/vehiculos:
+    get:
+      summary: get_all en /api/vehiculos
+      responses:
+        '200':
+          description: "\xC9xito"
+    post:
+      summary: create en /api/vehiculos
+      responses:
+        '200':
+          description: "\xC9xito"
+  /api/vehiculos/<int:item_id>:
+    put:
+      summary: update en /api/vehiculos/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+    delete:
+      summary: delete en /api/vehiculos/<int:item_id>
+      responses:
+        '200':
+          description: "\xC9xito"
+components:
+  schemas:
+    Cliente:
+      type: object
+      properties:
+        id:
+          type: integer
+        nombre:
+          type: string
+        telefono:
+          type: string
+        email:
+          type: string
+        vehiculo:
+          type: string
+        matricula:
+          type: string

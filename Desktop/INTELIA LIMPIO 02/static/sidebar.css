@@ -1,0 +1,77 @@
+/* sidebar.css – Estilo visual Intelia para layout principal */
+
+body {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #fff;
+  color: #1a2235;
+  margin: 0;
+}
+
+.cabecera {
+  width: 100%;
+  background: #213b74;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 2px 12px rgba(33,59,116,0.10);
+}
+
+.cabecera img {
+  height: 40px;
+}
+
+.sidebar {
+  background: #f4f6fb;
+  border-right: 1px solid #c7d3ee;
+  padding: 1rem 0;
+  overflow-y: auto;
+  height: 100%;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-btn {
+  display: block;
+  padding: 10px 16px;
+  color: #213b74;
+  text-decoration: none;
+  font-size: 1rem;
+  border-left: 4px solid transparent;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.nav-btn:hover {
+  background: #e8edf6;
+  border-left-color: #29b26f;
+}
+
+.nav-btn.activo {
+  background: #e8edf6;
+  font-weight: bold;
+  border-left-color: #213b74;
+}
+
+.main-content {
+  flex: 1;
+  padding: 32px;
+  background: #fff;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
+  }
+  .nav-btn {
+    flex: 1 0 50%;
+    text-align: center;
+  }
+}

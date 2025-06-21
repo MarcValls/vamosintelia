@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Visor de Presupuestos - INTELIA Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/intelia_manager.css" rel="stylesheet">
+    <script src="../clientes/utils.js"></script>
+</head>
+<body>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">&#9776;</button>
+
+    <!-- CABECERA -->
+    
+
+    <!-- MENÚ -->
+    
+
+    <!-- CONTENIDO -->
+    <div class="container container-visor">
+        <h2 class="mb-4">Visor de Presupuestos Enviados</h2>
+
+        <!-- Buscador -->
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="buscador" placeholder="Buscar por cliente, matrícula o referencia...">
+        </div>
+
+        <!-- Tabla de Presupuestos -->
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Referencia</th>
+                        <th>Cliente</th>
+                        <th>Vehículo</th>
+                        <th>Matrícula</th>
+                        <th>Fecha</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="presupuestosTBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="presupuestos.js"></script>
+</body>
+</html>

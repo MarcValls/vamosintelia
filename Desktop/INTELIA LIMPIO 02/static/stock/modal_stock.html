@@ -1,0 +1,21 @@
+<div id="modal" class="modal oculto">
+  <div class="modal-contenido">
+    <h2 id="modal-titulo">Nuevo Producto</h2>
+    <form id="form-stock">
+      <input type="hidden" id="producto-id" />
+      <label for="nombre">Nombre:
+        <input type="text" id="nombre" name="nombre" required />
+      </label>
+      <label for="cantidad">Cantidad:
+        <input type="number" id="cantidad" name="cantidad" required />
+      </label>
+      <label for="precio">Precio:
+        <input type="number" id="precio" name="precio" step="0.01" required />
+      </label>
+      <div class="modal-botones">
+        <button type="submit">💾 Guardar</button>
+        <button type="button" id="btn-cerrar">❌ Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

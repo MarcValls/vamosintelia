@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\controllers",
+    "\\controllers\\api",
+    "\\controllers\\api\\v1"
+  ],
+  "SelectedNode": "\\controllers\\api\\v1\\stock_controller.py",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,124 @@
+/* Estilo general similar a Intelia Manager */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f6f8fb;
+  color: #273351;
+}
+
+.cabecera {
+  background-color: #213b74;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cabecera h1 {
+  margin: 0;
+}
+
+.cabecera button {
+  background-color: white;
+  color: #213b74;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+main {
+  padding: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+th, td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+  background-color: #f0f2f8;
+}
+
+td button {
+  margin-right: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  background-color: #edf2fb;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 400px;
+}
+
+.modal-contenido form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-contenido label {
+  margin-bottom: 1rem;
+}
+
+.modal-contenido input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-botones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.modal-botones button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-botones button[type="submit"] {
+  background-color: #213b74;
+  color: white;
+}
+
+.modal-botones button[type="button"] {
+  background-color: #ccc;
+  color: #213b74;
+}
+
+.oculto {
+  display: none;
+}

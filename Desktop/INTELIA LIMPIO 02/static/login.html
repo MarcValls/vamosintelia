@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login INTELIA</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login INTELIA</h2>
+
+    <input type="text" id="usuario" placeholder="Correo electrónico" class="form-control" />
+    <input type="password" id="password" placeholder="Contraseña" class="form-control" />
+    <button onclick="login()" class="btn-success">Iniciar sesión</button>
+
+    <div id="token" class="token-box"></div>
+  </div>
+
+  <script>
+    async function login() {
+      const usuario = document.getElementById("usuario").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const div = document.getElementById("token");
+      div.innerHTML = "";
+
+      if (!usuario || !password) {
+        div.innerHTML = "<div class='error'>Usuario y contraseña requeridos.</div>";
+        return;
+      }
+
+      try {
+        const res = await fetch("http://localhost:5000/api/v1/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ correo: usuario, clave: password })
+        });
+
+        const data = await res.json();
+
+        if (data.token) {
+          localStorage.setItem("token", data.token);
+          div.innerHTML = "<div class='success'>Token guardado. Redirigiendo...</div>";
+          setTimeout(() => {
+            window.location.href = "sidebar.html";
+          }, 1500);
+        } else {
+          div.innerHTML = "<div class='error'>" + (data.error || "Credenciales inválidas") + "</div>";
+        }
+
+      } catch (err) {
+        div.innerHTML = "<div class='error'>Error de red: " + err.message + "</div>";
+      }
+    }
+  </script>
+</body>
+</html>

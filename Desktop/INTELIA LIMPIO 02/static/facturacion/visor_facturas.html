@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Histórico de Facturas – INTELIA Manager</title>
+  <link rel="stylesheet" href="../assets/intelia_manager.css">
+  <style>
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .search-bar {
+      flex-grow: 1;
+      margin-right: 1rem;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .btn-primary {
+      background-color: #0066cc;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="color: var(--azul-intelia); margin-bottom: 24px; text-align: center;">Gestión de Facturas</h1>
+  <div class="container" style="max-width: 960px; margin: 2rem auto;">
+    <div class="toolbar">
+      <div class="search-bar">
+        <input type="text" id="buscadorFacturas" placeholder="Buscar por número, cliente, fecha...">
+      </div>
+      <a href="plantilla_factura.html" class="btn-primary">
+        + Nueva Factura
+      </a>
+    </div>
+
+    <div id="listaFacturas" class="visor-facturas"></div>
+  </div>
+
+  <script src="visor_facturas_api.js"></script>
+</body>
+</html>

@@ -1,0 +1,582 @@
+:root {
+    --azul-intelia: #2196f3;
+    --azul-cabecera: #11223a;
+    --azul-medio: #0c172b;
+    --azul-oscuro: #0a0d12;
+    --gris-claro: #232e38;
+    --gris-medio: #181b1f;
+    --gris-fondo: #0a0d12;
+    --blanco: #fafbff;
+    --texto-principal: #fafbff;
+    --texto-secundario: #b3c2db;
+    --verde-confirmar: #20d480;
+    --amarillo: #ffe08a;
+    --rojo-alerta: #ea4c53;
+    --fuente-principal: 'Segoe UI', 'Arial', sans-serif;
+}
+
+body {
+    background: var(--gris-fondo);
+    color: var(--texto-principal);
+    font-family: var(--fuente-principal);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* ===========================================================================
+   CABECERA CENTRALIZADA (aplica tanto a header.cabecera-intelia como a header.cabecera)
+   =========================================================================== */
+header.cabecera-intelia,
+header.cabecera {
+    width: 100%;
+    background: var(--azul-oscuro) !important;
+    text-align: center;
+    padding: 12px 0 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+    margin-bottom: 24px !important;
+}
+
+    header.cabecera-intelia img,
+    header.cabecera img {
+        display: inline-block;
+        margin: 0 auto;
+        width: auto !important;
+        height: auto !important;
+        max-height: 80px !important;
+        max-width: 90vw !important;
+        border-radius: 12px !important;
+        background: var(--azul-medio) !important;
+        padding: 8px 16px !important;
+    }
+
+@media (min-width: 1200px) {
+    header.cabecera-intelia img,
+    header.cabecera img {
+        max-height: 100px !important;
+        max-width: 800px !important;
+    }
+}
+
+/* ===========================================================================
+   MENÚ PRINCIPAL
+   =========================================================================== */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 19px;
+    background: var(--azul-cabecera);
+    padding: 15px 0;
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 6px 24px #0009;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+    .menu a {
+        color: #d2e2fc;
+        font-weight: 600;
+        padding: 8px 22px;
+        border-radius: 9px;
+        transition: background 0.18s, color 0.14s;
+        text-decoration: none;
+    }
+
+        .menu a.activo,
+        .menu a:hover {
+            background: var(--azul-intelia);
+            color: #fff;
+            box-shadow: 0 2px 10px #2196f344;
+        }
+
+.menu-toggle {
+    display: none;
+    position: absolute;
+    top: 18px;
+    left: 22px;
+    background: transparent;
+    border: none;
+    font-size: 2.3em;
+    color: var(--azul-intelia);
+    z-index: 1200;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        right: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        background: var(--azul-cabecera);
+        box-shadow: 0 7px 18px #0009;
+        border-radius: 0 0 20px 20px;
+        z-index: 1000;
+        transition: max-height 0.24s, opacity 0.14s;
+    }
+
+        .menu.open {
+            max-height: 340px;
+            opacity: 1;
+            padding: 14px 0;
+        }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* ===========================================================================
+   CONTENEDOR GENERAL 
+   =========================================================================== */
+.container {
+    background: var(--gris-claro);
+    border-radius: 16px;
+    box-shadow: 0 6px 26px #000b;
+    padding: 30px 44px 28px 44px;
+    margin: 20px auto 28px auto;
+    max-width: 980px;
+    width: 97%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 16px 24px 16px;
+        margin: 12px auto 20px auto;
+    }
+}
+
+/* ===========================================================================
+   FORMULARIOS Y CAMPOS COMUNES
+   =========================================================================== */
+.form-control,
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="file"],
+select.form-select,
+input[type="date"],
+textarea {
+    border-radius: 7px;
+    border: 1.3px solid #24314c;
+    background: #222c38;
+    color: #fafbff;
+    padding: 7px 12px;
+    margin-bottom: 7px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    background: transparent;
+    color: #ffe08a;
+}
+
+    input[type="file"]::-webkit-file-upload-button {
+        background: #232e38;
+        color: #ffe08a;
+        border: none;
+        border-radius: 6px;
+        padding: 6px 12px;
+        font-weight: 500;
+        margin-right: 7px;
+        cursor: pointer;
+    }
+
+::-webkit-input-placeholder {
+    color: var(--texto-secundario);
+}
+
+::-moz-placeholder {
+    color: var(--texto-secundario);
+}
+
+:-ms-input-placeholder {
+    color: var(--texto-secundario);
+}
+
+::placeholder {
+    color: var(--texto-secundario);
+}
+
+.btn-primary,
+.btn-cancelar,
+.btn-success,
+.btn-eliminar {
+    border-radius: 7px;
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 1em;
+    border: none;
+    margin: 0 5px 5px 0;
+    cursor: pointer;
+    background: #232e38;
+    color: #e9edfb;
+    box-shadow: 0 1px 8px #0005;
+    transition: background .17s, color .15s;
+}
+
+    .btn-primary:hover,
+    .btn-cancelar:hover {
+        background: var(--azul-intelia);
+        color: #fff;
+    }
+
+.btn-eliminar {
+    background: var(--rojo-alerta);
+    color: #fff;
+}
+
+    .btn-eliminar:hover {
+        background: #be3339;
+    }
+
+/* Botones agrupados para responsividad */
+.form-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+@media (max-width: 480px) {
+    .form-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+        .form-buttons .btn-primary,
+        .form-buttons .btn-cancelar {
+            width: 100%;
+        }
+}
+
+/* ===========================================================================
+   TABLA COMÚN
+   =========================================================================== */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.clientes-table {
+    width: 100%;
+    background: #212f44;
+    color: var(--texto-principal);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border-collapse: collapse;
+}
+
+    .clientes-table th,
+    .clientes-table td {
+        padding: 10px 12px;
+        border: 1px solid #24314c;
+        text-align: left;
+    }
+
+    .clientes-table th {
+        background: var(--azul-medio);
+        color: #e3edfb;
+        font-weight: 700;
+    }
+
+    .clientes-table tr:nth-child(even) {
+        background: #181b29;
+    }
+
+    .clientes-table tr:hover {
+        background: var(--azul-cabecera);
+    }
+
+/* ===========================================================================
+   MODAL CLIENTE: overlay y ventana centrada
+   =========================================================================== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 18, 30, 0.82);
+    z-index: 1200;
+    transition: opacity 0.18s;
+}
+
+/* Ventana modal centrada */
+.modal-ficha {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #181b1f;
+    color: #fafbff;
+    border-radius: 18px;
+    box-shadow: 0 16px 50px #000d, 0 2px 8px #2196f344;
+    max-width: 670px;
+    width: 98vw;
+    padding: 38px 38px 28px 38px;
+    z-index: 1250;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: modalIn 0.22s;
+    outline: none; /* para focus */
+}
+
+/* Animación de aparición */
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Anulacion de borde en fieldset dentro del modal */
+#modalCliente fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+    #modalCliente fieldset + fieldset {
+        border-top: 1px solid #24314c;
+        margin-top: 16px;
+        padding-top: 16px;
+    }
+
+#modalCliente legend {
+    font-weight: 600;
+    color: var(--azul-intelia);
+    margin-bottom: 8px;
+}
+
+/* Ajustes específicos para inputs dentro del modal */
+#modalCliente .form-control {
+    background: var(--gris-oscuro) !important;
+    color: var(--blanco) !important;
+    border: 1.3px solid #24314c !important;
+}
+
+/* Botón de cerrar modal */
+.modal-cerrar {
+    position: absolute;
+    top: 11px;
+    right: 18px;
+    background: transparent;
+    color: #ffe08a;
+    font-size: 2.2em;
+    border: none;
+    cursor: pointer;
+    z-index: 1300;
+}
+
+/* Etiquetas dentro del modal */
+#modalCliente label {
+    display: block;
+    font-weight: 500;
+    color: #b3c2db;
+    margin-bottom: 4px;
+}
+
+/* Mini rows para inputs dinámicos */
+#modalCliente .mini-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+    /* Margen y tamaño inputs dinámicos */
+    #modalCliente .mini-row input {
+        margin-bottom: 0;
+    }
+
+/* Botones eliminar dentro del modal */
+#modalCliente .btn-cancelar {
+    background: #232e38 !important;
+    color: #ffe08a !important;
+    border: none;
+}
+
+    #modalCliente .btn-cancelar:hover {
+        background: var(--azul-intelia) !important;
+        color: #fff !important;
+    }
+
+/* Forzar texto blanco en etiquetas dentro del modal */
+#modalCliente h2,
+#modalCliente p,
+#modalCliente span,
+#modalCliente small,
+#modalCliente strong,
+#modalCliente em,
+#modalCliente th,
+#modalCliente td,
+#modalCliente a,
+#modalCliente input,
+#modalCliente select,
+#modalCliente textarea,
+#modalCliente legend {
+    color: var(--blanco) !important;
+}
+
+/* Visibilidad modal y overlay */
+#modalCliente,
+#modalClienteOverlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Imágenes adaptables */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Estilos responsive para filtros de agenda */
+@media (max-width: 600px) {
+    .filtros-agenda {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+        .filtros-agenda label {
+            margin-right: 4px;
+        }
+}
+
+/* Estilos para lista diaria móvil */
+@media (max-width: 480px) {
+    .lista-diaria-dia {
+        margin-bottom: 16px;
+    }
+
+        .lista-diaria-dia h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--azul-intelia);
+            text-transform: capitalize;
+        }
+
+    .tarjeta-cita {
+        margin-left: 0;
+        margin-bottom: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+
+/* === SIDEBAR INTELIA === */
+.sidebar {
+  width: 220px;
+  background-color: #1b1b1b;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.sidebar a {
+  display: block;
+  margin: 0.4rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  text-align: center;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.sidebar a:hover {
+  background: #555;
+}
+
+
+
+/* === LAYOUT CON SIDEBAR Y MAIN === */
+/* body layout eliminado para evitar conflicto con .layout */
+
+.main {
+  flex-grow: 1;
+  height: 100vh;
+  overflow: hidden;
+}
+
+iframe#visorPrincipal {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* === FUSIÓN CON SIDEBAR === */
+
+/* === SIDEBAR INTELIA === */
+.sidebar {
+  width: 220px;
+  background-color: #1b1b1b;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.sidebar a {
+  display: block;
+  margin: 0.4rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  text-align: center;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.sidebar a:hover {
+  background: #555;
+}
+
+
+
+/* === LAYOUT CON SIDEBAR Y MAIN === */
+
+
+.main {
+  flex-grow: 1;
+  height: 100vh;
+  overflow: hidden;
+}
+
+iframe#visorPrincipal {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Corrección para activar layout horizontal */
+.layout {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 120px);
+}

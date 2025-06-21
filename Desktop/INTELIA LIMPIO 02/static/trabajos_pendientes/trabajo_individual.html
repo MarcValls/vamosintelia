@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ficha de Trabajo (Operario) · Intelia Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../assets/intelia_manager.css" rel="stylesheet">
+  <style>
+    body { background: #131c29; color: #f4fafd; font-family: 'Segoe UI', Arial, sans-serif; }
+    .trabajo-box { max-width: 550px; background: #192646; border-radius: 13px; box-shadow: 0 8px 32px #131d2a40; margin: 25px auto; padding: 24px 32px; }
+    .trabajo-titulo { color: #32bbff; font-weight: 600; font-size: 1.32em; margin-bottom: 13px; }
+    .trabajo-meta { color: #86cfff; font-size: 1em; margin-bottom: 8px; }
+    .trabajo-tabla { width: 100%; margin-bottom: 18px; border-collapse: collapse; }
+    .trabajo-tabla th, .trabajo-tabla td { border-bottom: 1px solid #24406e; padding: 7px 6px; font-size: .99em; }
+    .trabajo-tabla th { background: #101d2c; color: #32bbff; }
+    .trabajo-tabla tr:last-child td { border-bottom: none; }
+    .trabajo-check { width: 24px; height: 24px; accent-color: #32bbff; }
+    .trabajo-obs { background: #212f44; border-radius: 7px; padding: 11px 13px; margin-bottom: 12px; min-height: 40px; }
+    .trabajo-fin-btn { background: #16e5a0; color: #10201a; border: none; border-radius: 8px; font-weight: 700; padding: 10px 22px; font-size: 1.05em; margin-top: 13px; transition: background .12s; cursor: pointer; }
+    .trabajo-fin-btn:disabled { background: #5daea3; color: #d7f6ee; cursor: not-allowed; }
+    .trabajo-label-obs { color: #aaa; font-size: .97em; margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <div class="trabajo-box">
+    <div class="trabajo-titulo" id="trabajoTitulo"></div>
+    <div class="trabajo-meta" id="trabajoMeta"></div>
+    <table class="trabajo-tabla" id="tablaTareas">
+      <thead>
+        <tr>
+          <th>✔</th>
+          <th>Concepto</th>
+          <th>Cantidad</th>
+        </tr>
+      </thead>
+      <tbody id="tareasBody"></tbody>
+    </table>
+    <div class="trabajo-label-obs">Observaciones del mecánico (internas, no para cliente):</div>
+    <textarea id="observacionesMecanico" class="trabajo-obs" rows="3" placeholder="Escribe aquí observaciones internas..."></textarea>
+    <button id="btnFinalizarTrabajo" class="trabajo-fin-btn" disabled>Finalizar trabajo</button>
+    <div id="msg" style="margin-top:10px;color:#ea5455;font-weight:600;"></div>
+  </div>
+
+  <script src="ficha_trabajo_operario.js"></script>
+</body>
+</html>

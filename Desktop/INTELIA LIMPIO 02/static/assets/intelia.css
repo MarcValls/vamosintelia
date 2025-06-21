@@ -1,0 +1,1479 @@
+
+/* === INICIO: login.css === */
+body {
+  background: #f6f8fb;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  color: #213b74;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-container {
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(33, 59, 116, 0.1);
+  width: 100%;
+  max-width: 420px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #213b74;
+}
+
+.form-control {
+  background: #f8fafd;
+  color: #213b74;
+  border: 1px solid #c7d3ee;
+  border-radius: 8px;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.form-control:focus {
+  border-color: #213b74;
+  box-shadow: 0 0 0 2px #c7d3ee77;
+  outline: none;
+}
+
+.btn-success {
+  background: #29b26f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-success:hover {
+  background: #20a360;
+}
+
+.token-box {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  word-break: break-word;
+  background: #f4f6fb;
+  color: #213b74;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.success {
+  color: #29b26f;
+  font-weight: bold;
+}
+
+/* === FIN: login.css === */
+
+/* === INICIO: sidebar.css === */
+/* sidebar.css – Estilo visual Intelia para layout principal */
+
+body {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #fff;
+  color: #1a2235;
+  margin: 0;
+}
+
+.cabecera {
+  width: 100%;
+  background: #213b74;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 2px 12px rgba(33,59,116,0.10);
+}
+
+.cabecera img {
+  height: 40px;
+}
+
+.sidebar {
+  background: #f4f6fb;
+  border-right: 1px solid #c7d3ee;
+  padding: 1rem 0;
+  overflow-y: auto;
+  height: 100%;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-btn {
+  display: block;
+  padding: 10px 16px;
+  color: #213b74;
+  text-decoration: none;
+  font-size: 1rem;
+  border-left: 4px solid transparent;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.nav-btn:hover {
+  background: #e8edf6;
+  border-left-color: #29b26f;
+}
+
+.nav-btn.activo {
+  background: #e8edf6;
+  font-weight: bold;
+  border-left-color: #213b74;
+}
+
+.main-content {
+  flex: 1;
+  padding: 32px;
+  background: #fff;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
+  }
+  .nav-btn {
+    flex: 1 0 50%;
+    text-align: center;
+  }
+}
+
+/* === FIN: sidebar.css === */
+
+/* === INICIO: assets/intelia_manager.css === */
+:root {
+    --azul-intelia: #2196f3;
+    --azul-cabecera: #11223a;
+    --azul-medio: #0c172b;
+    --azul-oscuro: #0a0d12;
+    --gris-claro: #232e38;
+    --gris-medio: #181b1f;
+    --gris-fondo: #0a0d12;
+    --blanco: #fafbff;
+    --texto-principal: #fafbff;
+    --texto-secundario: #b3c2db;
+    --verde-confirmar: #20d480;
+    --amarillo: #ffe08a;
+    --rojo-alerta: #ea4c53;
+    --fuente-principal: 'Segoe UI', 'Arial', sans-serif;
+}
+
+body {
+    background: var(--gris-fondo);
+    color: var(--texto-principal);
+    font-family: var(--fuente-principal);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* ===========================================================================
+   CABECERA CENTRALIZADA (aplica tanto a header.cabecera-intelia como a header.cabecera)
+   =========================================================================== */
+header.cabecera-intelia,
+header.cabecera {
+    width: 100%;
+    background: var(--azul-oscuro) !important;
+    text-align: center;
+    padding: 12px 0 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+    margin-bottom: 24px !important;
+}
+
+    header.cabecera-intelia img,
+    header.cabecera img {
+        display: inline-block;
+        margin: 0 auto;
+        width: auto !important;
+        height: auto !important;
+        max-height: 80px !important;
+        max-width: 90vw !important;
+        border-radius: 12px !important;
+        background: var(--azul-medio) !important;
+        padding: 8px 16px !important;
+    }
+
+@media (min-width: 1200px) {
+    header.cabecera-intelia img,
+    header.cabecera img {
+        max-height: 100px !important;
+        max-width: 800px !important;
+    }
+}
+
+/* ===========================================================================
+   MENÚ PRINCIPAL
+   =========================================================================== */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 19px;
+    background: var(--azul-cabecera);
+    padding: 15px 0;
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 6px 24px #0009;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+    .menu a {
+        color: #d2e2fc;
+        font-weight: 600;
+        padding: 8px 22px;
+        border-radius: 9px;
+        transition: background 0.18s, color 0.14s;
+        text-decoration: none;
+    }
+
+        .menu a.activo,
+        .menu a:hover {
+            background: var(--azul-intelia);
+            color: #fff;
+            box-shadow: 0 2px 10px #2196f344;
+        }
+
+.menu-toggle {
+    display: none;
+    position: absolute;
+    top: 18px;
+    left: 22px;
+    background: transparent;
+    border: none;
+    font-size: 2.3em;
+    color: var(--azul-intelia);
+    z-index: 1200;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        right: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        background: var(--azul-cabecera);
+        box-shadow: 0 7px 18px #0009;
+        border-radius: 0 0 20px 20px;
+        z-index: 1000;
+        transition: max-height 0.24s, opacity 0.14s;
+    }
+
+        .menu.open {
+            max-height: 340px;
+            opacity: 1;
+            padding: 14px 0;
+        }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* ===========================================================================
+   CONTENEDOR GENERAL 
+   =========================================================================== */
+.container {
+    background: var(--gris-claro);
+    border-radius: 16px;
+    box-shadow: 0 6px 26px #000b;
+    padding: 30px 44px 28px 44px;
+    margin: 20px auto 28px auto;
+    max-width: 980px;
+    width: 97%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 16px 24px 16px;
+        margin: 12px auto 20px auto;
+    }
+}
+
+/* ===========================================================================
+   FORMULARIOS Y CAMPOS COMUNES
+   =========================================================================== */
+.form-control,
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="file"],
+select.form-select,
+input[type="date"],
+textarea {
+    border-radius: 7px;
+    border: 1.3px solid #24314c;
+    background: #222c38;
+    color: #fafbff;
+    padding: 7px 12px;
+    margin-bottom: 7px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    background: transparent;
+    color: #ffe08a;
+}
+
+    input[type="file"]::-webkit-file-upload-button {
+        background: #232e38;
+        color: #ffe08a;
+        border: none;
+        border-radius: 6px;
+        padding: 6px 12px;
+        font-weight: 500;
+        margin-right: 7px;
+        cursor: pointer;
+    }
+
+::-webkit-input-placeholder {
+    color: var(--texto-secundario);
+}
+
+::-moz-placeholder {
+    color: var(--texto-secundario);
+}
+
+:-ms-input-placeholder {
+    color: var(--texto-secundario);
+}
+
+::placeholder {
+    color: var(--texto-secundario);
+}
+
+.btn-primary,
+.btn-cancelar,
+.btn-success,
+.btn-eliminar {
+    border-radius: 7px;
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 1em;
+    border: none;
+    margin: 0 5px 5px 0;
+    cursor: pointer;
+    background: #232e38;
+    color: #e9edfb;
+    box-shadow: 0 1px 8px #0005;
+    transition: background .17s, color .15s;
+}
+
+    .btn-primary:hover,
+    .btn-cancelar:hover {
+        background: var(--azul-intelia);
+        color: #fff;
+    }
+
+.btn-eliminar {
+    background: var(--rojo-alerta);
+    color: #fff;
+}
+
+    .btn-eliminar:hover {
+        background: #be3339;
+    }
+
+/* Botones agrupados para responsividad */
+.form-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+@media (max-width: 480px) {
+    .form-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+        .form-buttons .btn-primary,
+        .form-buttons .btn-cancelar {
+            width: 100%;
+        }
+}
+
+/* ===========================================================================
+   TABLA COMÚN
+   =========================================================================== */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.clientes-table {
+    width: 100%;
+    background: #212f44;
+    color: var(--texto-principal);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border-collapse: collapse;
+}
+
+    .clientes-table th,
+    .clientes-table td {
+        padding: 10px 12px;
+        border: 1px solid #24314c;
+        text-align: left;
+    }
+
+    .clientes-table th {
+        background: var(--azul-medio);
+        color: #e3edfb;
+        font-weight: 700;
+    }
+
+    .clientes-table tr:nth-child(even) {
+        background: #181b29;
+    }
+
+    .clientes-table tr:hover {
+        background: var(--azul-cabecera);
+    }
+
+/* ===========================================================================
+   MODAL CLIENTE: overlay y ventana centrada
+   =========================================================================== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 18, 30, 0.82);
+    z-index: 1200;
+    transition: opacity 0.18s;
+}
+
+/* Ventana modal centrada */
+.modal-ficha {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #181b1f;
+    color: #fafbff;
+    border-radius: 18px;
+    box-shadow: 0 16px 50px #000d, 0 2px 8px #2196f344;
+    max-width: 670px;
+    width: 98vw;
+    padding: 38px 38px 28px 38px;
+    z-index: 1250;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: modalIn 0.22s;
+    outline: none; /* para focus */
+}
+
+/* Animación de aparición */
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Anulacion de borde en fieldset dentro del modal */
+#modalCliente fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+    #modalCliente fieldset + fieldset {
+        border-top: 1px solid #24314c;
+        margin-top: 16px;
+        padding-top: 16px;
+    }
+
+#modalCliente legend {
+    font-weight: 600;
+    color: var(--azul-intelia);
+    margin-bottom: 8px;
+}
+
+/* Ajustes específicos para inputs dentro del modal */
+#modalCliente .form-control {
+    background: var(--gris-oscuro) !important;
+    color: var(--blanco) !important;
+    border: 1.3px solid #24314c !important;
+}
+
+/* Botón de cerrar modal */
+.modal-cerrar {
+    position: absolute;
+    top: 11px;
+    right: 18px;
+    background: transparent;
+    color: #ffe08a;
+    font-size: 2.2em;
+    border: none;
+    cursor: pointer;
+    z-index: 1300;
+}
+
+/* Etiquetas dentro del modal */
+#modalCliente label {
+    display: block;
+    font-weight: 500;
+    color: #b3c2db;
+    margin-bottom: 4px;
+}
+
+/* Mini rows para inputs dinámicos */
+#modalCliente .mini-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+    /* Margen y tamaño inputs dinámicos */
+    #modalCliente .mini-row input {
+        margin-bottom: 0;
+    }
+
+/* Botones eliminar dentro del modal */
+#modalCliente .btn-cancelar {
+    background: #232e38 !important;
+    color: #ffe08a !important;
+    border: none;
+}
+
+    #modalCliente .btn-cancelar:hover {
+        background: var(--azul-intelia) !important;
+        color: #fff !important;
+    }
+
+/* Forzar texto blanco en etiquetas dentro del modal */
+#modalCliente h2,
+#modalCliente p,
+#modalCliente span,
+#modalCliente small,
+#modalCliente strong,
+#modalCliente em,
+#modalCliente th,
+#modalCliente td,
+#modalCliente a,
+#modalCliente input,
+#modalCliente select,
+#modalCliente textarea,
+#modalCliente legend {
+    color: var(--blanco) !important;
+}
+
+/* Visibilidad modal y overlay */
+#modalCliente,
+#modalClienteOverlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Imágenes adaptables */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Estilos responsive para filtros de agenda */
+@media (max-width: 600px) {
+    .filtros-agenda {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+        .filtros-agenda label {
+            margin-right: 4px;
+        }
+}
+
+/* Estilos para lista diaria móvil */
+@media (max-width: 480px) {
+    .lista-diaria-dia {
+        margin-bottom: 16px;
+    }
+
+        .lista-diaria-dia h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--azul-intelia);
+            text-transform: capitalize;
+        }
+
+    .tarjeta-cita {
+        margin-left: 0;
+        margin-bottom: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+
+/* === SIDEBAR INTELIA === */
+.sidebar {
+  width: 220px;
+  background-color: #1b1b1b;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.sidebar a {
+  display: block;
+  margin: 0.4rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  text-align: center;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.sidebar a:hover {
+  background: #555;
+}
+
+
+
+/* === LAYOUT CON SIDEBAR Y MAIN === */
+/* body layout eliminado para evitar conflicto con .layout */
+
+.main {
+  flex-grow: 1;
+  height: 100vh;
+  overflow: hidden;
+}
+
+iframe#visorPrincipal {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* === FUSIÓN CON SIDEBAR === */
+
+/* === SIDEBAR INTELIA === */
+.sidebar {
+  width: 220px;
+  background-color: #1b1b1b;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.sidebar a {
+  display: block;
+  margin: 0.4rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  text-align: center;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.sidebar a:hover {
+  background: #555;
+}
+
+
+
+/* === LAYOUT CON SIDEBAR Y MAIN === */
+
+
+.main {
+  flex-grow: 1;
+  height: 100vh;
+  overflow: hidden;
+}
+
+iframe#visorPrincipal {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Corrección para activar layout horizontal */
+.layout {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 120px);
+}
+
+/* === FIN: assets/intelia_manager.css === */
+
+/* === INICIO: agendas/visor_agenda.css === */
+/* static/agenda/visor_agenda.css */
+#calendar {
+    margin-bottom: 24px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(33,59,116,0.06);
+    padding: 16px;
+}
+.autocomplete-items {
+    position: absolute;
+    z-index: 1001;
+    background: #fff;
+    border: 1px solid #c7d3ee;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+}
+.autocomplete-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #213b74;
+}
+.autocomplete-item:hover {
+    background: #f4f6fb;
+    color: #29b26f;
+}
+/* Asegura contraste y accesibilidad en todos los inputs y botones del modal */
+input, textarea {
+    background: #f8fafd;
+    color: #213b74;
+    border: 1px solid #c7d3ee;
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+input:focus, textarea:focus {
+    border-color: #213b74;
+    box-shadow: 0 0 0 2px #c7d3ee77;
+}
+
+/* === FIN: agendas/visor_agenda.css === */
+
+/* === INICIO: citas/visor_citas.css === */
+/* visor_citas.css – Estilo Intelia blanco y azul */
+
+body {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #fff;
+  color: #1a2235;
+  margin: 0;
+  padding: 40px;
+}
+
+.container-visor {
+  background: #fff;
+  color: #1a2235;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(33,59,116,0.10);
+  padding: 32px 20px;
+}
+
+.visor-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.table th {
+  background: #213b74;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.table td {
+  background: #fff;
+  color: #213b74;
+  padding: 10px;
+}
+
+.table tr:nth-child(even) td {
+  background: #f4f6fb;
+}
+
+.form-control {
+  background: #f8fafd;
+  color: #213b74;
+  border: 1px solid #c7d3ee;
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #213b74;
+  box-shadow: 0 0 0 2px #c7d3ee77;
+}
+
+.btn-success {
+  background: #29b26f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background: #20a360;
+}
+
+.btn-action, .btn-cancel {
+  background: #213b74;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.btn-action:hover, .btn-cancel:hover {
+  background: #162252;
+}
+
+#mensajeCitas {
+  font-size: 0.95rem;
+  margin-top: 10px;
+  color: #213b74;
+}
+
+/* === FIN: citas/visor_citas.css === */
+
+/* === INICIO: clientes/visor_clientes.css === */
+/* visor_clientes.css */
+
+body {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #fff;
+  color: #1a2235;
+  margin: 0;
+  padding: 40px;
+}
+
+.container-visor {
+  background: #fff;
+  color: #1a2235;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(33,59,116,0.10);
+  padding: 32px 20px;
+}
+
+.visor-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.table th {
+  background: #213b74;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.table td {
+  background: #fff;
+  color: #213b74;
+  padding: 10px;
+}
+
+.table tr:nth-child(even) td {
+  background: #f4f6fb;
+}
+
+.form-control {
+  background: #f8fafd;
+  color: #213b74;
+  border: 1px solid #c7d3ee;
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #213b74;
+  box-shadow: 0 0 0 2px #c7d3ee77;
+}
+
+.btn-success {
+  background: #29b26f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background: #20a360;
+}
+
+.btn-action, .btn-cancel {
+  background: #213b74;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.btn-cancel:hover {
+  background: #162252;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(33,59,116,0.2);
+  z-index: 1000;
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #213b74;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  color: #213b74;
+  cursor: pointer;
+}
+
+.mini-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+ul#historialCliente {
+  padding-left: 20px;
+  margin: 10px 0;
+  color: #213b74;
+}
+
+/* === FIN: clientes/visor_clientes.css === */
+
+/* === INICIO: diagnostico/visor_diagnosticos.css === */
+/* Fondo principal claro, letras siempre oscuras */
+.container-visor {
+    margin-top: 40px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(33,59,116,0.10);
+    padding: 32px 20px 20px 20px;
+    color: #1a2235; /* Color de texto principal */
+}
+
+/* Encabezado de tabla y paginación */
+.table th {
+    background: #213b74;
+    color: #fff !important; /* Letras blancas sobre fondo azul oscuro */
+    font-weight: 600;
+    font-size: 1rem;
+}
+.table td {
+    background: #fff;
+    color: #213b74; /* Letras azul oscuro sobre fondo claro */
+    font-size: 1rem;
+}
+.table tr:nth-child(even) td {
+    background: #f4f6fb;
+}
+
+/* Botón de nuevo diagnóstico */
+#btnNuevoDiagnostico {
+    min-width: 190px;
+    font-weight: bold;
+    font-size: 1.05rem;
+    background: #29b26f !important;
+    color: #fff !important;
+    border: none;
+}
+#btnNuevoDiagnostico:hover {
+    background: #20a360 !important;
+    color: #fff !important;
+}
+
+/* Paginación */
+.pagination .page-link {
+    color: #213b74;
+    background: #fff;
+    border: 1px solid #c7d3ee;
+}
+.pagination .page-item.active .page-link {
+    background-color: #213b74;
+    color: #fff !important;
+    border-color: #213b74;
+}
+.pagination .page-link:focus {
+    background: #dbe4fa;
+    color: #213b74;
+}
+
+/* Filtros y formularios */
+#filtrosForm .form-control,
+#filtrosForm .form-select {
+    min-width: 120px;
+    font-size: 1rem;
+    background: #f8fafd;
+    color: #213b74;
+    border: 1px solid #c7d3ee;
+}
+#filtrosForm .form-control:focus,
+#filtrosForm .form-select:focus {
+    border-color: #213b74;
+    box-shadow: 0 0 0 2px #c7d3ee77;
+}
+
+.form-label {
+    color: #213b74;
+    font-weight: 500;
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 16px;
+    background: #fff;
+    color: #1a2235;
+}
+.modal-header {
+    background: #213b74;
+    border-bottom: 1px solid #c7d3ee;
+}
+.modal-title {
+    color: #fff;
+    font-weight: bold;
+}
+#formDiagnosticoModal .form-label {
+    color: #213b74;
+    font-weight: 500;
+}
+#formDiagnosticoModal .form-control, 
+#formDiagnosticoModal textarea {
+    border-radius: 8px;
+    background: #f8fafd;
+    color: #213b74;
+}
+#formDiagnosticoModal .form-control[readonly], 
+#formDiagnosticoModal textarea[readonly] {
+    background: #e8edf6;
+    color: #213b74;
+}
+#finalizarDiagnosticoBtnModal {
+    font-size: 1.15rem;
+    padding: 8px 32px;
+    background: #213b74;
+    color: #fff !important;
+    border: none;
+}
+#finalizarDiagnosticoBtnModal:hover {
+    background: #162252;
+    color: #fff !important;
+}
+
+/* === FIN: diagnostico/visor_diagnosticos.css === */
+
+/* === INICIO: incidencias/incidencias.css === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+h1 {
+  text-align: center;
+  color: #0a58ca;
+}
+
+.filtros {
+  margin: 1em auto;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-size: 1rem;
+}
+
+.filtros select {
+  padding: 0.4em;
+  font-size: 1rem;
+}
+
+.grid-incidencias {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5em;
+  padding: 1em 0;
+}
+
+.incidencia {
+  background-color: #ffffff;
+  border-left: 6px solid #adb5bd;
+  border-radius: 0.5em;
+  padding: 1em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.incidencia:hover {
+  transform: translateY(-3px);
+}
+
+.incidencia h3 {
+  margin: 0 0 0.5em;
+  font-size: 1.1em;
+  color: #343a40;
+}
+
+.incidencia p {
+  margin: 0.3em 0;
+}
+
+.incidencia.pendiente {
+  border-color: #ffc107;
+}
+
+.incidencia.resuelto {
+  border-color: #198754;
+  opacity: 0.95;
+}
+
+.prioridad.alta {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.prioridad.media {
+  color: #fd7e14;
+}
+
+.prioridad.baja {
+  color: #6c757d;
+}
+
+/* === FIN: incidencias/incidencias.css === */
+
+/* === INICIO: recepcion/recepcion.css === */
+/* recepcion.css – Estilo Intelia para ficha de recepción de vehículo */
+
+body {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #fff;
+  color: #1a2235;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(33,59,116,0.10);
+  padding: 32px 24px;
+}
+
+h2 {
+  color: #213b74;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #213b74;
+  margin-top: 1rem;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c7d3ee;
+  border-radius: 8px;
+  background: #f8fafd;
+  color: #213b74;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+input[readonly] {
+  background-color: #f0f0f0;
+  color: #213b74;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn-primary {
+  background-color: #29b26f;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #20a360;
+}
+
+.btn-cancelar {
+  background-color: #213b74;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-cancelar:hover {
+  background-color: #162252;
+}
+
+#msgRecepcion {
+  color: #e53935;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+/* === FIN: recepcion/recepcion.css === */
+
+/* === INICIO: stock/visor_stock.css === */
+/* Estilo general similar a Intelia Manager */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f6f8fb;
+  color: #273351;
+}
+
+.cabecera {
+  background-color: #213b74;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cabecera h1 {
+  margin: 0;
+}
+
+.cabecera button {
+  background-color: white;
+  color: #213b74;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+main {
+  padding: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+th, td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+  background-color: #f0f2f8;
+}
+
+td button {
+  margin-right: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  background-color: #edf2fb;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 400px;
+}
+
+.modal-contenido form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-contenido label {
+  margin-bottom: 1rem;
+}
+
+.modal-contenido input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-botones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.modal-botones button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-botones button[type="submit"] {
+  background-color: #213b74;
+  color: white;
+}
+
+.modal-botones button[type="button"] {
+  background-color: #ccc;
+  color: #213b74;
+}
+
+.oculto {
+  display: none;
+}
+
+/* === FIN: stock/visor_stock.css === */

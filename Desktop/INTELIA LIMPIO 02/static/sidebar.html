@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Panel INTELIA</title>
+  <link rel="stylesheet" href="sidebar.css" />
+</head>
+<body>
+
+  <header class="cabecera">
+    <img src="assets/intelia_manager_cabecera.png" alt="Logo Intelia" />
+  </header>
+
+  <div class="layout" style="display: flex; height: calc(100vh - 60px);">
+    <nav class="sidebar" id="sidebarMenu" role="navigation" aria-label="Menú principal">
+      <a class="nav-btn" data-html="clientes/visor_clientes.html" data-js="clientes/visor_clientes.js">Clientes</a>
+      <a class="nav-btn" data-html="vehiculos/vehiculos.html" data-js="vehiculos/vehiculos.js">Vehículos</a>
+      <a class="nav-btn" data-html="citas/visor_citas.html" data-js="citas/visor_citas.js">Citas</a>
+      <a class="nav-btn" data-html="agendas/visor_agenda.html" data-js="agendas/visor_agenda.js">Agenda</a>
+      <a class="nav-btn" data-html="diagnostico/visor_diagnosticos.html" data-js="diagnostico/visor_diagnosticos.js">Diagnóstico</a>
+      <a class="nav-btn" data-html="presupuestos/visor_presupuestos.html" data-js="presupuestos/presupuestos.js">Presupuestos</a>
+      <a class="nav-btn" data-html="facturacion/visor_facturas.html" data-js="facturacion/visor_facturas.js">Facturación</a>
+      <a class="nav-btn" data-html="ordenes/ordenes.html" data-js="ordenes/ordenes.js">Órdenes</a>
+      <a class="nav-btn" data-html="stock/visor_stock.html" data-js="stock/visor_stock.js">Stock</a>
+      <a class="nav-btn" data-html="incidencias/visor_incidencias.html" data-js="incidencias/visor_incidencias.js">Incidencias</a>
+      <a class="nav-btn" data-html="trabajos_pendientes/visor_trabajos.html" data-js="trabajos_pendientes/trabajos.js">Trabajos pendientes</a>
+      <a class="nav-btn" data-html="usuarios/visor_usuarios.html" data-js="usuarios/visor_usuarios.js">Usuarios</a>
+      <a href="login.html">Cerrar sesión</a>
+    </nav>
+
+    <main class="main-content" id="main-content">
+      <h2>Bienvenido a INTELIA</h2>
+      <p>Selecciona una opción en la barra lateral.</p>
+    </main>
+  </div>
+
+  <script src="sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Usuarios</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="visor_usuarios.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container-visor">
+    <h1 class="visor-title">Gestión de Usuarios</h1>
+    <div class="header-actions">
+      <input id="filtroUsuarios" type="text" placeholder="Buscar usuario..." class="form-control" style="width: 250px">
+      <button id="btnNuevoUsuario" class="btn-success">+ Nuevo usuario</button>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Usuario</th>
+          <th>Rol</th>
+          <th>Correo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaUsuarios">
+        <!-- Datos dinámicos -->
+      </tbody>
+    </table>
+  </div>
+
+  <div id="modalUsuario" class="modal" style="display:none;">
+    <div class="modal-content">
+      <form id="formUsuario">
+        <input type="text" name="usuario" placeholder="Usuario" required class="form-control">
+        <input type="email" name="email" placeholder="Correo" required class="form-control">
+        <select name="rol" class="form-select">
+          <option value="admin">Admin</option>
+          <option value="gestor">Gestor</option>
+          <option value="operario">Operario</option>
+          <option value="auditor">Auditor</option>
+        </select>
+        <input type="password" name="password" placeholder="Contraseña" required class="form-control">
+        <div class="modal-actions">
+          <button type="submit" class="btn-success">Guardar</button>
+          <button type="button" onclick="cerrarModal()" class="btn-cancel">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="visor_usuarios.js"></script>
+</body>
+</html>

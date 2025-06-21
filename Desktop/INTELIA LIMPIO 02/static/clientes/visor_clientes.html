@@ -1,0 +1,63 @@
+<div class="container-visor">
+  <h1 class="visor-title">Gestión de Clientes</h1>
+  <div class="header-actions">
+    <input id="filtroClientes" type="text" placeholder="Buscar cliente..." class="form-control" style="width: 250px">
+    <button id="btnNuevoCliente" class="btn-success">+ Nuevo cliente</button>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Teléfonos</th>
+        <th>Vehículos</th>
+        <th>Emails</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="clientesTBody"></tbody>
+  </table>
+</div>
+
+<div id="modalClienteOverlay" class="modal-overlay" hidden></div>
+<div id="modalCliente" class="modal" hidden>
+  <div class="modal-content">
+    <h2>Ficha de Cliente</h2>
+    <form id="formFichaCliente">
+      <label>ID:</label>
+      <input id="numCliente" class="form-control" type="text" readonly>
+
+      <label>Nombre:</label>
+      <input id="nombreCliente" class="form-control" type="text" required>
+
+      <label>Dirección:</label>
+      <input id="direccionCliente" class="form-control" type="text">
+
+      <label>Notas:</label>
+      <textarea id="notasCliente" class="form-control"></textarea>
+
+      <label>Teléfonos:</label>
+      <div id="telefonosContainer"></div>
+      <button type="button" class="btn-action" id="btnAddTelefono">+ Añadir Teléfono</button>
+
+      <label>Emails:</label>
+      <div id="emailsContainer"></div>
+      <button type="button" class="btn-action" id="btnAddEmail">+ Añadir Email</button>
+
+      <label>Vehículos:</label>
+      <div id="vehiculosContainer"></div>
+      <button type="button" class="btn-action" id="btnAddVehiculo">+ Añadir Vehículo</button>
+
+      <label>Historial:</label>
+      <ul id="historialCliente"></ul>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn-success">Guardar</button>
+        <button type="button" id="cancelarModalCliente" class="btn-cancel">Cancelar</button>
+      </div>
+    </form>
+    <button id="cerrarModalCliente" class="modal-close" aria-label="Cerrar">×</button>
+  </div>
+</div>

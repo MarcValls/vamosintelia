@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visor de Citas</title>
+  <link rel="stylesheet" href="visor_citas.css">
+</head>
+<body>
+  <div class="container-visor">
+    <h1 class="visor-title">Agenda de Citas</h1>
+
+    <div class="header-actions">
+      <input type="text" id="filtroCitas" class="form-control" placeholder="Buscar cliente o servicio...">
+      <button id="btnNuevaRecepcion" class="btn-success" aria-label="Crear nueva recepción">+ Nueva Recepción</button>
+    </div>
+
+    <table class="table" id="citasTable">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Servicio</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filas dinámicas -->
+      </tbody>
+    </table>
+
+    <div id="mensajeCitas" style="margin-top: 1rem; color: #213b74;"></div>
+  </div>
+
+  <script src="../recepcion/recepcion.js"></script>
+  <script src="visor_citas.js"></script>
+</body>
+</html>

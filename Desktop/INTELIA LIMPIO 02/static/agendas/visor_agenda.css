@@ -1,0 +1,43 @@
+/* static/agenda/visor_agenda.css */
+#calendar {
+    margin-bottom: 24px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(33,59,116,0.06);
+    padding: 16px;
+}
+.autocomplete-items {
+    position: absolute;
+    z-index: 1001;
+    background: #fff;
+    border: 1px solid #c7d3ee;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+}
+.autocomplete-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #213b74;
+}
+.autocomplete-item:hover {
+    background: #f4f6fb;
+    color: #29b26f;
+}
+/* Asegura contraste y accesibilidad en todos los inputs y botones del modal */
+input, textarea {
+    background: #f8fafd;
+    color: #213b74;
+    border: 1px solid #c7d3ee;
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+input:focus, textarea:focus {
+    border-color: #213b74;
+    box-shadow: 0 0 0 2px #c7d3ee77;
+}

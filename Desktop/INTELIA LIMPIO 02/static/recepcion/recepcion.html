@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recepción de Vehículo – Talleres BOTELLA</title>
+  <link rel="stylesheet" href="recepcion.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Recepción de Vehículo</h2>
+    <div id="msgRecepcion"></div>
+
+    <form id="formRecepcion">
+      <label for="cliente">Cliente:</label>
+      <input type="text" id="cliente" name="cliente" readonly>
+
+      <label for="vehiculo">Vehículo:</label>
+      <input type="text" id="vehiculo" name="vehiculo" readonly>
+
+      <label for="matricula">Matrícula:</label>
+      <input type="text" id="matricula" name="matricula" readonly>
+
+      <label for="fechaCita">Fecha Cita:</label>
+      <input type="date" id="fechaCita" name="fechaCita" readonly>
+
+      <label for="horaCita">Hora Cita:</label>
+      <input type="time" id="horaCita" name="horaCita" readonly>
+
+      <label for="fechaRecepcion">Fecha Recepción:</label>
+      <input type="date" id="fechaRecepcion" name="fechaRecepcion" readonly>
+
+      <label for="horaRecepcion">Hora Recepción:</label>
+      <input type="time" id="horaRecepcion" name="horaRecepcion" readonly>
+
+      <label for="kilometrajeInicial">Kilometraje Inicial (km):</label>
+      <input type="number" id="kilometrajeInicial" name="kilometrajeInicial" min="0" placeholder="Ej. 45230" required>
+
+      <label for="nivelCombustible">Nivel de Combustible:</label>
+      <select id="nivelCombustible" name="nivelCombustible" required>
+        <option value="">Seleccione…</option>
+        <option value="1/4">1/4</option>
+        <option value="1/2">1/2</option>
+        <option value="3/4">3/4</option>
+        <option value="Lleno">Lleno</option>
+      </select>
+
+      <label for="estadoExterior">Estado Exterior:</label>
+      <textarea id="estadoExterior" name="estadoExterior" rows="3" placeholder="Describa cualquier daño visible."></textarea>
+
+      <label for="observacionesRecepcion">Observaciones / Comentarios:</label>
+      <textarea id="observacionesRecepcion" name="observacionesRecepcion" rows="4" placeholder="Comentarios adicionales."></textarea>
+
+      <label for="firmaCliente">Firma Cliente (nombre completo):</label>
+      <input type="text" id="firmaCliente" name="firmaCliente" placeholder="Ej. Juan Pérez" required>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 1.5rem;">
+        <button type="button" class="btn-cancelar" onclick="window.history.back();">Cancelar</button>
+        <button type="submit" class="btn-primary">Guardar Recepción</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="recepcion.js"></script>
+</body>
+</html>

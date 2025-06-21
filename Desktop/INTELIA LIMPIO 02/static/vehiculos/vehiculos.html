@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehículos – Intelia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container-visor">
+    <h1 class="visor-title">Gestión de Vehículos</h1>
+
+    <div class="header-actions">
+      <input id="filtroVehiculos" type="text" placeholder="Buscar por matrícula o cliente..." class="form-control" style="width: 300px">
+      <button id="btnNuevoVehiculo" class="btn-success">+ Nuevo vehículo</button>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Matrícula</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Año</th>
+          <th>Cliente</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="vehiculosTBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Modal para nuevo/editar vehículo -->
+  <div id="modalVehiculo" class="modal" style="display:none;">
+    <div class="modal-content">
+      <form id="formVehiculo">
+        <input type="hidden" name="id" id="vehiculoId">
+        <input type="text" name="matricula" placeholder="Matrícula" required class="form-control">
+        <input type="text" name="marca" placeholder="Marca" required class="form-control">
+        <input type="text" name="modelo" placeholder="Modelo" required class="form-control">
+        <input type="number" name="anio" placeholder="Año" required class="form-control">
+        <input type="text" name="cliente" placeholder="Cliente" required id="clienteAutocomplete" class="form-control" list="clientesDatalist">
+        <datalist id="clientesDatalist"></datalist>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn-success">Guardar</button>
+          <button type="button" onclick="cerrarModal()">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let clientesLista = [];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      cargarVehiculos();
+      cargarClientes();
+      document.getElementById("btnNuevoVehiculo").onclick = abrirModalNuevoVehiculo;
+      document.getElementById("formVehiculo").onsubmit = guardarVehiculo;
+    });
+
+    function cargarVehiculos() {
+      fetch("/api/v1/vehiculos")
+        .then(res => res.json())
+        .then(data => {
+          const tbody = document.getElementById("vehiculosTBody");
+          tbody.innerHTML = "";
+          if (!data.data || data.data.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="7" class="text-center">No hay vehículos registrados</td></tr>`;
+            return;
+          }
+          data.data.forEach(v => {
+            tbody.innerHTML += `
+              <tr>
+                <td>${v.id}</td>
+                <td>${v.matricula}</td>
+                <td>${v.marca}</td>
+                <td>${v.modelo}</td>
+                <td>${v.anio}</td>
+                <td>${v.cliente}</td>
+                <td><button onclick="editarVehiculo(${v.id})" class="btn btn-sm">Editar</button></td>
+              </tr>`;
+          });
+        });
+    }
+
+    function cargarClientes() {
+      fetch("/api/v1/clientes/?all=1")
+        .then(res => res.json())
+        .then(data => {
+          clientesLista = data.data || [];
+          const dl = document.getElementById("clientesDatalist");
+          dl.innerHTML = "";
+          clientesLista.forEach(c => {
+            dl.innerHTML += `<option value="${c.nombre}"></option>`;
+          });
+        });
+    }
+
+    function abrirModalNuevoVehiculo() {
+      document.getElementById("modalVehiculo").style.display = "block";
+      document.getElementById("formVehiculo").reset();
+      document.getElementById("vehiculoId").value = "";
+    }
+
+    function cerrarModal() {
+      document.getElementById("modalVehiculo").style.display = "none";
+    }
+
+    function guardarVehiculo(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const vehiculo = Object.fromEntries(formData.entries());
+      const metodo = vehiculo.id ? "PUT" : "POST";
+      const url = "/api/v1/vehiculos" + (vehiculo.id ? `/${vehiculo.id}` : "");
+
+      fetch(url, {
+        method: metodo,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(vehiculo)
+      }).then(res => res.json())
+        .then(resp => {
+          if (resp.status === "success") {
+            cerrarModal();
+            cargarVehiculos();
+          } else {
+            alert("Error: " + resp.message);
+          }
+        });
+    }
+
+    function editarVehiculo(id) {
+      fetch(`/api/v1/vehiculos/${id}`)
+        .then(res => res.json())
+        .then(data => {
+          if (!data.data) return alert("Vehículo no encontrado");
+          const v = data.data;
+          abrirModalNuevoVehiculo();
+          document.getElementById("vehiculoId").value = v.id;
+          document.querySelector("input[name='matricula']").value = v.matricula;
+          document.querySelector("input[name='marca']").value = v.marca;
+          document.querySelector("input[name='modelo']").value = v.modelo;
+          document.querySelector("input[name='anio']").value = v.anio;
+          document.querySelector("input[name='cliente']").value = v.cliente;
+        });
+    }
+  </script>
+</body>
+</html>

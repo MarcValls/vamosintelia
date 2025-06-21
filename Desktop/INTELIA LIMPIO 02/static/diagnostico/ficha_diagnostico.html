@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Visor de Diagnósticos - INTELIA Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap y estilos Intelia -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/intelia_manager.css" rel="stylesheet">
+    <link href="visor_diagnosticos.css" rel="stylesheet">
+    <script src="../clientes/utils.js"></script>
+</head>
+<body>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">&#9776;</button>
+
+    <div class="container container-visor">
+        <h2 class="mb-4">Visor de Diagnósticos</h2>
+
+        <!-- Filtros -->
+        <form class="row g-2 mb-3" id="filtrosForm">
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="filtroCliente" placeholder="Buscar por cliente">
+            </div>
+            <div class="col-md-3">
+                <select class="form-select" id="filtroEstado">
+                    <option value="">Todos los estados</option>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="en progreso">En progreso</option>
+                    <option value="completado">Completado</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <input type="date" class="form-control" id="filtroFecha">
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary w-100" type="submit">Filtrar</button>
+            </div>
+        </form>
+
+        <!-- Tabla Diagnósticos -->
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered align-middle">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Orden</th>
+                        <th>Detalle</th>
+                        <th>Estado</th>
+                        <th>Fecha</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="diagnosticosTBody"></tbody>
+            </table>
+        </div>
+        <!-- Paginación -->
+        <nav>
+            <ul class="pagination justify-content-center mt-3" id="paginacion"></ul>
+        </nav>
+    </div>
+
+    <!-- Modal Ficha Diagnóstico -->
+    <div class="modal fade" id="modalDiagnostico" tabindex="-1" aria-labelledby="modalDiagnosticoLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-4" id="modalDiagnosticoLabel">Ficha de Diagnóstico</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formDiagnosticoModal" autocomplete="off">
+              <div class="mb-3 row">
+                <div class="col-md-6">
+                  <label class="form-label">Cliente</label>
+                  <input type="text" class="form-control" id="clienteInputModal" name="cliente" readonly>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Teléfono</label>
+                  <input type="text" class="form-control" id="telefonoInputModal" name="telefono" readonly>
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <div class="col-md-6">
+                  <label class="form-label">Vehículo</label>
+                  <input type="text" class="form-control" id="vehiculoInputModal" name="vehiculo" readonly>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Matrícula</label>
+                  <input type="text" class="form-control" id="matriculaInputModal" name="matricula" readonly>
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <div class="col-md-6">
+                  <label class="form-label">Referencia</label>
+                  <input type="text" class="form-control" id="referenciaInputModal" name="referencia" readonly>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Fecha</label>
+                  <input type="text" class="form-control" id="fechaInputModal" name="fecha" readonly>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Problemas detectados</label>
+                <textarea class="form-control" id="problemasInputModal" name="problemas" rows="3" readonly></textarea>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Detalle del presupuesto</label>
+                <div class="table-responsive">
+                  <table class="table table-bordered table-sm" id="tablaPresupuestoModal">
+                    <thead>
+                      <tr>
+                        <th>Concepto</th>
+                        <th>Cantidad</th>
+                        <th>PVP/und</th>
+                        <th>Subtotal</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody id="bodyPresupuestoModal"></tbody>
+                    <tfoot>
+                      <tr>
+                        <td colspan="3" class="text-end">Total (IVA incluido 21%)</td>
+                        <td colspan="2">
+                          <input type="number" class="form-control" id="totalPresupuestoModal" readonly>
+                        </td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+                <button type="button" class="btn btn-primary" id="addConceptoBtnModal" style="display:none;">Añadir concepto</button>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Observaciones / Instrucciones</label>
+                <textarea class="form-control" id="observacionesInputModal" name="observaciones" rows="2" readonly></textarea>
+              </div>
+              <div class="text-center">
+                <button type="button" class="btn btn-success btn-lg" id="finalizarDiagnosticoBtnModal" style="display:none;">
+                  Finalizar diagnóstico y generar presupuesto
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="visor_diagnosticos.js"></script>
+    <!-- Bootstrap JS (para modal) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* recepcion.css – Estilo Intelia para ficha de recepción de vehículo */
+
+body {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #fff;
+  color: #1a2235;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(33,59,116,0.10);
+  padding: 32px 24px;
+}
+
+h2 {
+  color: #213b74;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #213b74;
+  margin-top: 1rem;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c7d3ee;
+  border-radius: 8px;
+  background: #f8fafd;
+  color: #213b74;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+input[readonly] {
+  background-color: #f0f0f0;
+  color: #213b74;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn-primary {
+  background-color: #29b26f;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #20a360;
+}
+
+.btn-cancelar {
+  background-color: #213b74;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-cancelar:hover {
+  background-color: #162252;
+}
+
+#msgRecepcion {
+  color: #e53935;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
