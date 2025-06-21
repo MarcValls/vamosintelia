@@ -1,7 +1,9 @@
+const API_BASE = localStorage.getItem('api_base') || '';
+
 document.addEventListener("DOMContentLoaded", () => {
     const tablaBody = document.querySelector("#tablaOrdenes tbody");
 
-    fetch("/api/v1/ordenes")
+    fetch(`${API_BASE}/api/v1/ordenes`)
         .then(response => response.json())
         .then(data => {
             tablaBody.innerHTML = "";

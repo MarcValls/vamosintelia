@@ -1,12 +1,14 @@
 // visor_facturas.js
 
+const API_BASE = localStorage.getItem('api_base') || '';
+
 window.addEventListener('load', function () {
   const contenedor = document.getElementById('listaFacturas');
   if (!contenedor) return;
   contenedor.innerHTML = '';
 
   // Intentar cargar facturas desde el backend
-  fetch("/api/facturas", {
+  fetch(`${API_BASE}/api/facturas`, {
     headers: {
       "Authorization": "Bearer " + localStorage.getItem("token")
     }

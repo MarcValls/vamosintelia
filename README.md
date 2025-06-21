@@ -95,6 +95,25 @@ el objeto `report.json`.
 Con este set de roles y el prompt maestro tu agente de testing podrá comportarse como usuarios reales, descubrir errores incapaces de detectarse con pruebas puramente unitarias y entregar un informe listo para el equipo de desarrollo. ¡Listo para implementar!
 ```
 
+codex/update-api-base-url-configuration
+## Configurar `api_base`
+
+Las páginas HTML y scripts buscan la URL base de la API en `localStorage` bajo la clave `api_base`. Si no existe, se asume el mismo origen de la página.
+
+1. **Entorno local**: no es necesario configurar nada si el backend y el frontend se sirven desde el mismo dominio.
+2. **Entorno de desarrollo/staging**: ejecuta en la consola del navegador:
+
+   ```javascript
+   localStorage.setItem('api_base', 'https://servidor-ejemplo.com');
+   ```
+
+3. **Restablecer**: elimina la clave para volver al comportamiento por defecto:
+
+   ```javascript
+   localStorage.removeItem('api_base');
+   ```
+
 ## Environment variables
 
 Set `INTELIA_SECRET_KEY` before running the application. This secret key is mandatory and used for signing authentication tokens.
+main

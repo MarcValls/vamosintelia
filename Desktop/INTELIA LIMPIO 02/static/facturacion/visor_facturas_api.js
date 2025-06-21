@@ -1,10 +1,12 @@
+const API_BASE = localStorage.getItem('api_base') || '';
+
 window.addEventListener('load', async function () {
   const contenedor = document.getElementById('listaFacturas');
   if (!contenedor) return;
   contenedor.innerHTML = '';
 
   try {
-    const res = await fetch("/api/v1/ordenes");
+    const res = await fetch(`${API_BASE}/api/v1/ordenes`);
     if (!res.ok) throw new Error("No se pudo obtener la lista de órdenes.");
 
     const ordenes = await res.json();

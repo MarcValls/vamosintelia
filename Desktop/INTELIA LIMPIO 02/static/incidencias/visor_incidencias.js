@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const API_BASE = localStorage.getItem('api_base') || '';
   const contenedor = document.getElementById('contenedorIncidencias');
   const filtro = document.getElementById('filtroEstado');
 
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function cargarYFiltrar() {
-    fetch('/api/incidencias')
+    fetch(`${API_BASE}/api/incidencias`)
       .then(res => res.json())
       .then(data => {
         const estado = filtro.value;

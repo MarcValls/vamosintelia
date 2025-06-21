@@ -2,6 +2,7 @@
 // TRABAJOS.JS (CORREGIDO)
 // ==========================
 
+const API_BASE = localStorage.getItem('api_base') || '';
 let trabajos = [];
 let clientes = [];
 
@@ -23,7 +24,7 @@ async function cargarClientes() {
 
 async function cargarTrabajos() {
   try {
-    const res = await fetch('http://localhost:5001/api/finalizaciones');
+    const res = await fetch(`${API_BASE}/api/finalizaciones`);
     if (!res.ok) throw new Error("Archivo de trabajos no encontrado");
     trabajos = await res.json();
   } catch(e) {
@@ -104,7 +105,7 @@ function exportarTrabajosJSON() {
   const blob = new Blob([JSON.stringify(trabajos, null, 2)], {type: "application/json"});
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
-  a.download = "http://localhost:5001/api/finalizaciones";
+  a.download = `${API_BASE}/api/finalizaciones`;
   a.click();
 }
 

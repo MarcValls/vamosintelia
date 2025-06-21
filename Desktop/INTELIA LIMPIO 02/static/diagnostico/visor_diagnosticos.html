@@ -134,7 +134,8 @@
 
   <!-- Script embebido -->
   <script>
-    const API_URL = "/api/v1/diagnosticos/";
+    const API_BASE = localStorage.getItem('api_base') || '';
+    const API_URL = `${API_BASE}/api/v1/diagnosticos/`;
 
 let paginaActual = 1;
 let totalPaginas = 1;
@@ -160,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // -------------- Autocompletados --------------
 async function cargarClientesDatalist() {
     // Suponiendo endpoint GET /api/v1/clientes/?all=1 devuelve [{id, nombre, telefono, vehiculos:[{matricula, modelo, ...}]}]
-    const res = await fetch('/api/v1/clientes/?all=1', { headers: { "Authorization": "Bearer " + (window.token || "") } });
+    const res = await fetch(`${API_BASE}/api/v1/clientes/?all=1`, { headers: { "Authorization": "Bearer " + (window.token || "") } });
     const data = await res.json();
     clientesLista = data.data || [];
     const dl = document.getElementById("clientesDatalist");
@@ -190,7 +191,7 @@ function asignarEventosModal() {
         if (!vehiculo) return;
         document.getElementById("vehiculoInputModal").value = vehiculo.modelo || "";
         // Suponiendo que el endpoint es GET /api/v1/ordenes_trabajo/?matricula=XXX
-        const res = await fetch(`/api/v1/ordenes_trabajo/?matricula=${encodeURIComponent(matricula)}`, { headers: { "Authorization": "Bearer " + (window.token || "") } });
+        const res = await fetch(`${API_BASE}/api/v1/ordenes_trabajo/?matricula=${encodeURIComponent(matricula)}`, { headers: { "Authorization": "Bearer " + (window.token || "") } });
         const data = await res.json();
         ordenesVehiculo = data.data || [];
         const dl = document.getElementById("ordenesDatalist");

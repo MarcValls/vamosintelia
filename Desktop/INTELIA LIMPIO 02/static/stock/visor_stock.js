@@ -3,7 +3,8 @@ const btnRecargar = document.getElementById("btn-recargar");
 const btnNuevo = document.getElementById("btn-nuevo");
 let modal, form, btnCerrar;
 
-const apiUrl = "/api/v1/stock";
+const API_BASE = localStorage.getItem('api_base') || '';
+const apiUrl = `${API_BASE}/api/v1/stock`;
 
 function cargarStock() {
   tablaBody.innerHTML = "<tr><td colspan='5'>Cargando...</td></tr>";

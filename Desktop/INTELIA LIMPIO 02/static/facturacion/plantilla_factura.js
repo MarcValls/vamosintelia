@@ -1,10 +1,12 @@
+const API_BASE = localStorage.getItem('api_base') || '';
+
 document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(window.location.search);
   const idOrden = params.get("id_orden");
   if (!idOrden) return;
 
   try {
-    const response = await fetch(`/api/v1/ordenes/${idOrden}`);
+    const response = await fetch(`${API_BASE}/api/v1/ordenes/${idOrden}`);
     if (!response.ok) throw new Error("Orden no encontrada");
 
     const orden = await response.json();
@@ -118,7 +120,7 @@ function guardarEnLocalStorage(clave, datosFactura) {
 }
 
 function guardarEnBackend(datos) {
-  fetch("/api/v1/facturas", {
+  fetch(`${API_BASE}/api/v1/facturas`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(datos)
