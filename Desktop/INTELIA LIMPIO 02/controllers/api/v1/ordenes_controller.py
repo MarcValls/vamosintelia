@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
 import sqlite3
-from controllers.utils.db_utils import get_db_path
+from utils.db_utils import get_db_path
 
 ordenes_bp = Blueprint('ordenes_bp', __name__)
 DB_PATH = get_db_path()
