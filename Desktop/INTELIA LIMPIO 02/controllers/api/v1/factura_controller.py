@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from controllers.utils.db_utils import get_db_path
+from utils.db_utils import get_db_path
 from utils.auth_utils import token_required, role_required
 from datetime import datetime
 import sqlite3
