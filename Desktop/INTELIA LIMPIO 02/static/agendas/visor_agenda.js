@@ -1,5 +1,6 @@
 // static/agenda/visor_agenda.js
 
+const API_BASE = localStorage.getItem('api_base') || '';
 let calendar;
 document.addEventListener("DOMContentLoaded", () => {
     initCalendar();
@@ -34,7 +35,7 @@ function initCalendar() {
 }
 
 function fetchEventosAgenda(fetchInfo, successCallback, failureCallback) {
-    fetch("/api/v1/agenda/")
+    fetch(`${API_BASE}/api/v1/agenda/`)
         .then(r => r.json())
         .then(data => {
             // Convierte datos a formato FullCalendar
@@ -100,7 +101,7 @@ function guardarCita(e) {
         descripcion: document.getElementById("descripcionCita").value
     };
     const id = document.getElementById("citaId").value;
-    const url = id ? `/api/v1/agenda/${id}` : "/api/v1/agenda/";
+    const url = id ? `${API_BASE}/api/v1/agenda/${id}` : `${API_BASE}/api/v1/agenda/`;
     const method = id ? "PUT" : "POST";
 
     fetch(url, {
@@ -124,7 +125,7 @@ function buscarCliente(e) {
         document.getElementById("autocomplete-list").innerHTML = "";
         return;
     }
-    fetch(`/api/v1/clientes/?q=${encodeURIComponent(val)}`)
+    fetch(`${API_BASE}/api/v1/clientes/?q=${encodeURIComponent(val)}`)
         .then(r => r.json())
         .then(resp => {
             const list = document.getElementById("autocomplete-list");

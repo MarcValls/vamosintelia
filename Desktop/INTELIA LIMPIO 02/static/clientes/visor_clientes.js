@@ -8,6 +8,8 @@ let vehiculos = [];
 
 const $ = sel => document.querySelector(sel);
 
+const API_BASE = localStorage.getItem('api_base') || '';
+
 // ----------- INICIALIZACIÓN -----------
 document.addEventListener('DOMContentLoaded', () => {
   cargarClientes();
@@ -24,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ----------- TABLA -----------
 async function cargarClientes() {
-  const res = await fetch('/api/v1/clientes/');
+  const res = await fetch(`${API_BASE}/api/v1/clientes/`);
   const data = await res.json();
   clientes = data.data || [];
   renderTablaClientes(clientes);
@@ -133,7 +135,7 @@ async function guardarCliente(e) {
     vehiculos: vehiculos.filter(v => v.marca || v.modelo)
   };
 
-  const url = clienteActivo?.id ? `/api/v1/clientes/${clienteActivo.id}` : '/api/v1/clientes/';
+  const url = clienteActivo?.id ? `${API_BASE}/api/v1/clientes/${clienteActivo.id}` : `${API_BASE}/api/v1/clientes/`;
   const method = clienteActivo?.id ? 'PUT' : 'POST';
 
   const res = await fetch(url, {
@@ -153,7 +155,7 @@ async function guardarCliente(e) {
 
 async function eliminarCliente(id) {
   if (!confirm('¿Eliminar cliente?')) return;
-  const res = await fetch(`/api/v1/clientes/${id}`, { method: 'DELETE' });
+  const res = await fetch(`${API_BASE}/api/v1/clientes/${id}`, { method: 'DELETE' });
   const data = await res.json();
   if (data.status === 'success') cargarClientes();
   else alert(data.message || 'Error al eliminar');
@@ -177,7 +179,7 @@ async function cargarHistorialCliente(id) {
 
   cont.innerHTML = '<li>Cargando historial...</li>';
   try {
-    const res = await fetch(`/api/v1/clientes/${id}/historial`);
+    const res = await fetch(`${API_BASE}/api/v1/clientes/${id}/historial`);
     const data = await res.json();
     if (data.status === 'success' && data.data.length) {
       cont.innerHTML = data.data.map(h =>

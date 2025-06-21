@@ -52,6 +52,7 @@
   </div>
 
   <script>
+    const API_BASE = localStorage.getItem('api_base') || '';
     let clientesLista = [];
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -62,7 +63,7 @@
     });
 
     function cargarVehiculos() {
-      fetch("/api/v1/vehiculos")
+      fetch(`${API_BASE}/api/v1/vehiculos`)
         .then(res => res.json())
         .then(data => {
           const tbody = document.getElementById("vehiculosTBody");
@@ -87,7 +88,7 @@
     }
 
     function cargarClientes() {
-      fetch("/api/v1/clientes/?all=1")
+      fetch(`${API_BASE}/api/v1/clientes/?all=1`)
         .then(res => res.json())
         .then(data => {
           clientesLista = data.data || [];
@@ -114,7 +115,7 @@
       const formData = new FormData(e.target);
       const vehiculo = Object.fromEntries(formData.entries());
       const metodo = vehiculo.id ? "PUT" : "POST";
-      const url = "/api/v1/vehiculos" + (vehiculo.id ? `/${vehiculo.id}` : "");
+      const url = `${API_BASE}/api/v1/vehiculos` + (vehiculo.id ? `/${vehiculo.id}` : "");
 
       fetch(url, {
         method: metodo,
@@ -132,7 +133,7 @@
     }
 
     function editarVehiculo(id) {
-      fetch(`/api/v1/vehiculos/${id}`)
+      fetch(`${API_BASE}/api/v1/vehiculos/${id}`)
         .then(res => res.json())
         .then(data => {
           if (!data.data) return alert("Vehículo no encontrado");

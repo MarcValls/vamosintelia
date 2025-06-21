@@ -1,3 +1,5 @@
+const API_BASE = localStorage.getItem('api_base') || '';
+
 document.addEventListener("DOMContentLoaded", () => {
   validarToken();
   cargarUsuarios();
@@ -14,7 +16,7 @@ function validarToken() {
 }
 
 function cargarUsuarios() {
-  fetch("/api/v1/usuarios/", {
+  fetch(`${API_BASE}/api/v1/usuarios/`, {
     headers: { Authorization: "Bearer " + localStorage.getItem("token") }
   })
     .then(res => res.json())
@@ -52,7 +54,7 @@ function cerrarModal() {
 function guardarUsuario(e) {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(e.target).entries());
-  fetch("/api/v1/usuarios/", {
+  fetch(`${API_BASE}/api/v1/usuarios/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

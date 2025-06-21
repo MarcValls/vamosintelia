@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', initVisorCitas);
 
+const API_BASE = localStorage.getItem('api_base') || '';
 let citas = [];
 
 function initVisorCitas() {
@@ -22,7 +23,7 @@ async function loadCitas() {
   msg.textContent = 'Cargando citas...';
 
   try {
-    const response = await fetch('/api/v1/agenda/');
+    const response = await fetch(`${API_BASE}/api/v1/agenda/`);
     if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
     const result = await response.json();
     citas = result.data || [];
